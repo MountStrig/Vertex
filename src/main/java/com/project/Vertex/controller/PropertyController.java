@@ -68,5 +68,6 @@ public class PropertyController {
             encodeImage(property);
         }
     }
-	
+    
+
 }
