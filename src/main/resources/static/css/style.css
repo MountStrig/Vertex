@@ -74,6 +74,14 @@ box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
 .footer-underline, .search-btn, .select-tag, .title-underline {
     display: inline-block;
 }
+.nav-search input {
+    width : 45%;
+}
+.nav-ul {
+    display : flex;
+    flex-direction : row;
+    margin-left : 20px;
+}
 
 .form-container{
 
