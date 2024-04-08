@@ -179,6 +179,9 @@ width: 310px; /* Set the desired width for each card */
   border-radius : 5px;
 box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
 }
+.img-carousel {
+
+}
 .card2 {
 width: 310px; /* Set the desired width for each card */
   height: 250px; /* Set the desired height for each card */
