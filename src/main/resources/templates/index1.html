@@ -66,8 +66,136 @@
                                   </div>
                               </div>
                           </nav>
-                          
-                          <div class="container mt-4">
+  <div class="container mt-4">
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label for="filterColumn1" class="form-label">Reserve Price From:</label>
+
+        <input type="number" class="form-control" id="filter1Column1" oninput="filterTable()">
+
+      </div>
+
+      <div class="col-md-3">
+        <label for="filterColumn2" class="form-label">To:</label>
+
+        <input type="number" class="form-control" id="filter1Column2" oninput="filterTable()">
+
+      </div>
+
+
+
+      <div class="col-md-3">
+        <label for="filterColumn3" class="form-label">State:</label>
+        <select class="form-select" id="filter1Column3">
+          <option value="">All</option>
+          <option value="">Andhra Pradesh</option>
+          <option value="">Assam</option>
+          <option value="">Telagana</option>
+          <option value="">Tamilnadu</option>
+          <option value=""></option>
+          <!-- Add filter options as needed -->
+        </select>
+      </div>
+
+      <div class="col-md-3">
+        <label for="filterColumn4" class="form-label">Type Of Property:</label>
+        <select class="form-select" id="filter1Column4">
+          <option value="">All</option>
+          <option value="">Accessories</option>
+          <option value="">Agriculatural land</option>
+          <option value="">Assets</option>
+          <option value="">Barge</option>
+          <option value="">Banquet Hall</option>
+          <!-- Add filter options as needed -->
+        </select>
+      </div>
+    </div>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Banks</th>
+        <th scope="col">Auction Number</th>
+        <th scope="col">Asset on Auction</th>
+        <th scope="col">City</th>
+        <th scope="col">Bid Sub mission of Last Date </th>
+        <th scope="col">Reserve Price</th>
+        <th scope="col">EMD</th>
+        <th scope="col">Event Type</th>
+
+        <!-- Add more headings as needed -->
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <!-- Replace "image1.png" with the actual path to your PNG image -->
+          <img th:src="@{/images/hdfc-removebg-preview.png}" alt="Image 1" height="50">
+        </td>
+        <td>121313</td>
+        <td>All the Price and parcel of the immovable  property bearing<br>
+          Office No. 207. 2nd Floor.Harist Corparate<br> <a href="#"  data-bs-toggle="modal" data-bs-target="#interestModal">Iam interested</a>
+        </td>
+        <td>Hyderabad</td>
+        <td>11 march 2023</td>
+        <td>200000000</td>
+        <td>200000000</td>
+        <td>SARFASI</td>
+        <!-- Add more data for each row as needed -->
+      </tr>
+      <!-- Repeat the above row structure for a total of 8 rows -->
+      <tr>
+        <td>
+          <img th:src="@{/images/sbi-removebg-preview.png}" alt="Image 2" height="50">
+        </td>
+        <td>121114</td>
+        <td>All the Price and parcel of the immovable  property bearing<br>
+          Office No. 207. 2nd Floor.Harist Corparate<br> <a href="#"  data-bs-toggle="modal" data-bs-target="#interestModal">Iam interested</a>
+        </td>
+        <td>Hyderabad</td>
+        <td>11 march 2023</td>
+        <td>200000000</td>
+        <td>200000000</td>
+        <td>SARFASI</td>
+
+      </tr>
+      <tr>
+        <td>
+          <img th:src="@{/images/icic-removebg-preview.png}" alt="Image 2" height="50">
+        </td>
+        <td>121215</td>
+        <td>All the Price and parcel of the immovable  property bearing<br>
+          Office No. 207. 2nd Floor.Harist Corparate<br> <a href="#"  data-bs-toggle="modal" data-bs-target="#interestModal">Iam interested</a>
+        </td>
+        <td>Vizag</td>
+        <td>1 May 2023</td>
+        <td>25000000</td>
+        <td>25000000</td>
+        <td>SARFASI</td>
+
+      </tr>
+      <tr>
+        <td>
+          <img th:src="@{images/axi-removebg-preview.png}" alt="Image 2" height="50">
+        </td>
+        <td>121416</td>
+        <td>All the Price and parcel of the immovable  property bearing<br>
+          Office No. 207. 2nd Floor.Harist Corparate<br> <a href="#"  data-bs-toggle="modal" data-bs-target="#interestModal">Iam interested</a>
+        </td>
+        <td>Vijayawad</td>
+        <td>23 April 2023</td>
+        <td>229000.00</td>
+        <td>229000.00</td>
+        <td>SARFASI</td>
+
+      </tr>
+      <!-- Repeat for the remaining rows -->
+      </tbody>
+    </table>
+
+  </div>
+
+  <div class="container mt-4">
                               <h1>Benfits of buying.</h1><br>
                               <h1 style="margin-top: -40px;">Auctioned Properties</h1>
                           </div>
