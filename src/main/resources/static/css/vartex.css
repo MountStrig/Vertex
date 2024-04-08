@@ -170,6 +170,53 @@ body {
   height: 150px; /* Set the desired height for each card */
   margin: auto;
 }
+.card1 {
+width: 310px; /* Set the desired width for each card */
+  height: 250px; /* Set the desired height for each card */
+  margin: auto;
+  margin-top : 3px;
+  background-color : #fff;
+  border-radius : 5px;
+box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
+}
+.card2 {
+width: 310px; /* Set the desired width for each card */
+  height: 250px; /* Set the desired height for each card */
+  margin: auto;
+  margin-top : 3px;
+  background-color : #3f5833;
+  border-radius : 5px;
+  padding : 10px;
+box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
+}
+.footer-underline::after {
+    height: 1px;
+    background-color: #9afd6f;
+}
+.support-rounded-size {
+    height: 50px;
+    width: 50px;
+    background-color: #9afd6f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    font-size: 15px;
+}
+.footer-underline::after, .title-underline::after {
+    content: "";
+    display: block;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+}
+.footer-underline, .search-btn, .select-tag, .title-underline {
+    display: inline-block;
+}
 
 .mySlides {
   display: none;
