@@ -41,23 +41,26 @@ public class LoginController {
 		 List<Auction> auctions = auctionService.getAll();
 		 auctions.forEach(auction -> auction.setSubmissionDate(LocalDate.now()));
 	        System.out.println("Number of auctions retrieved: " + auctions.size());
+	       
+	        
+	        // Add a new instance of AuctionRequest to the model for the form
+	        model.addAttribute("request", new AuctionRequest());
 	        model.addAttribute("auctions", auctions);
 	        
 	        return "index1";
 	}	
 	
-	
-	
 	@Autowired
-    AuctionRequestService auctionRequestService;
-   
-   @PostMapping("/auctionRequest")
-   public String saveAuctionRequest(@ModelAttribute("request")AuctionRequest auctionRequest, Model model) {
-	   
-	   model.addAttribute("request", new AuctionRequest());
-	   auctionRequestService.saveAuctionRequest(auctionRequest);
-	   
-	   return "redirect:/userSuccess";
-   }
+	AuctionRequestService auctionRequestService;
+	
+	@PostMapping("/saveAuctionRequest")
+	 public String saveAuctionRequest(@ModelAttribute("request")AuctionRequest auctionRequest, Model model) {
+		   
+		   model.addAttribute("request", new AuctionRequest());
+		   auctionRequestService.saveAuctionRequest(auctionRequest);
+		   
+		   return "redirect:/userSuccess";
+	   }
+	
 	
 }
