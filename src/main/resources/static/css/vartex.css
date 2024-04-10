@@ -217,13 +217,37 @@ box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
     margin-left: auto;
     margin-top: 5px;
 }
-.footer-underline, .search-btn, .select-tag, .title-underline {
+.cat-auctions-h1::after {
+content: "";
+    display: block;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5px;
+}
+.footer-underline, .search-btn, .select-tag, .title-underline ,.cat-auctions-h1 {
     display: inline-block;
 }
+.card1:hover h3 {
+    font-size: 30px; /* Increase font size upon hover */
+}
+
+.card1:hover i {
+    font-size: 70px !important; /* Increase icon size upon hover */
+}
+
 
 .mySlides {
   display: none;
 }
+.cat-auctions {
+margin-top : 25px;
+}
+.cat-auctions-h1::after {
+    height: 1px;
+    background-color: #3f5833;
+}
+
 
 /* Style the navigation buttons */
 .navigation-buttons {

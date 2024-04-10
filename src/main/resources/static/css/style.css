@@ -10,7 +10,7 @@ body{
 
 .serach-bar-btn{
     background-color: #bfeaab;
-    color: black;
+    color: black !important;
 }
 /* #133903 */
 
@@ -49,6 +49,13 @@ box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
 .footer-underline::after {
     height: 1px;
     background-color: #9afd6f;
+}
+a:hover {
+text-decoration : none;
+color : white;
+}
+.button {
+width : 55%;
 }
 .support-rounded-size {
     height: 50px;
