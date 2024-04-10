@@ -157,7 +157,7 @@ body {
   }
 }
 .carousel-inner {
-  width: 30%; /* Adjust the width of the carousel as needed */
+  width: 70%; /* Adjust the width of the carousel as needed */
   margin: auto;
 }
 
@@ -359,7 +359,7 @@ footer {
 .carousel-inner img {
   
   width: 100%;
-  height: 20%;
+  height: 200px;
 }
 /* CSS for Animation */
 @keyframes slideInLeft {
