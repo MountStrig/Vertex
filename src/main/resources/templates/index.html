@@ -218,6 +218,633 @@
         </button>
 		
      </div>
+    <div class="container mt-4">
+        <div class="card fsearch-filter-card ">
+            <div class="card-body filter-bg rounded">
+                <div class="searchForm">
+                    <form method="GET" action="https://www.vertexproserv.com/search" accept-charset="UTF-8" id="search">
+                        <div class="row">
+                            <h2 class="text-light fs-3 text-center ">Find Your Dream Property <p class="m-0 f3b459">FREE Access!</p></h2>
+                            <div class="col-sm-12 col-lg-2">
+                                <input class="select-tag" placeholder="Auction Id" autocomplete="off" name="keyword" type="text" fdprocessedid="kd6cn">
+                            </div>
+                            <div class="col-sm-12 col-lg-2 selectboxparant">
+                                <select id="category" class="select-tag" autocomplete="off" name="category" fdprocessedid="m0jgf"><option value="" selected="selected">-- Category --</option><option value="commercial">Commercial</option><option value="gold-auctions">Gold Auctions</option><option value="industrials">Industrials</option><option value="others">Others</option><option value="residential">Residential</option><option value="scrap-plant-machinery">Scrap, Plant &amp; Machinery</option><option value="vehicle-auctions">Vehicle Auctions</option></select>
+                            </div>
+
+                            <div class="col-sm-12 col-md-4 col-lg-2 selectboxparant">
+                                <select id="mobile_state" class="state_id select2 select-tag select2-hidden-accessible" autocomplete="off" name="state" tabindex="-1" aria-hidden="true"><option value="" selected="selected">-- State --</option><option value="andaman-and-nicobar-islands">Andaman and Nicobar Islands</option><option value="andhra-pradesh">Andhra Pradesh</option><option value="arunachal-pradesh">Arunachal Pradesh</option><option value="assam">Assam</option><option value="bihar">Bihar</option><option value="chhattisgarh">Chhattisgarh</option><option value="dadra-and-nagar-haveli">Dadra and Nagar Haveli</option><option value="daman-and-diu">Daman and Diu</option><option value="delhi">Delhi</option><option value="goa">Goa</option><option value="gujarat">Gujarat</option><option value="haryana">Haryana</option><option value="haveli">Haveli</option><option value="himachal-pradesh">Himachal Pradesh</option><option value="jammu-and-kashmir">Jammu and Kashmir</option><option value="jharkhand">Jharkhand</option><option value="karnataka">Karnataka</option><option value="kerala">Kerala</option><option value="lakshadweep">Lakshadweep</option><option value="madhya-pradesh">Madhya Pradesh</option><option value="maharashtra">Maharashtra</option><option value="manipur">Manipur</option><option value="meghalaya">Meghalaya</option><option value="mizoram">Mizoram</option><option value="nagaland">Nagaland</option><option value="odisha">Odisha</option><option value="puducherry">Puducherry</option><option value="punjab">Punjab</option><option value="rajasthan">Rajasthan</option><option value="sikkim">Sikkim</option><option value="tamil-nadu">Tamil Nadu</option><option value="telangana">Telangana</option><option value="tripura">Tripura</option><option value="uttar-pradesh">Uttar Pradesh</option><option value="uttarakhand">Uttarakhand</option><option value="west-bengal">West Bengal</option></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 160.438px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-mobile_state-container"><span class="select2-selection__rendered" id="select2-mobile_state-container" title="-- State --">-- State --</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                            </div>
+
+                            <div class="col-sm-12 col-lg-2 selectboxparant">
+                                <select id="city" class="city_id select-tag" autocomplete="off" name="city" fdprocessedid="njsbsl"><option value="" selected="selected">-- City --</option></select>
+                                <span class="text-white">Select state to get cities.</span>
+                            </div>
+                            <div class="col-sm-12 col-lg-2 selectboxparant">
+                                <input type="text" class="form-control select-tag searchBank ui-autocomplete-input" placeholder="Bank" name="bank" autocomplete="off" fdprocessedid="jmzogf">
+                            </div>
+                            <div class="col-sm-12 col-lg-2"><button class="search-btn text-dark" type="submit" fdprocessedid="adimyk">Search</button></div>
+                        </div>
+                    </form>
+                    <div class="d-lg-flex d-md-flex justify-content-center text-center">
+                        <div class="p-2">
+                            <a href="https://www.eauctionsindia.com/category/vehicle-auctions/live" class="btn live-vehicle-btn btn-sm fw-bold">164 Live Vehicles</a>
+                        </div>
+                        <div class="p-2">
+                            <a href="https://www.vertexproserv.com/search/live" class="btn live-property-btn btn-sm fw-bold">8809 Live Properties</a>
+                        </div>
+                        <div class="p-2">
+                            <a href="https://www.vertexproserv.com/search/old" class="btn old-property-btn btn-sm fw-bold">75926 Old Properties</a>
+                        </div>
+                        <div class="p-2">
+                            <p class="btn old-property-btn btn-sm fw-bold">140213 Registered Users</p>
+                        </div>
+                        <!--<div class="p-2">-->
+                        <!--    <a href="/trending-properties" class="btn live-vehicle-btn btn-sm fw-bold">Trending Properties</a>-->
+                        <!--</div>-->                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+
+        <table class="table table-responsive-xl ">
+            <thead>
+            <tr>
+                <th scope="col">Banks</th>
+                <th scope="col">Auction Number</th>
+                <th scope="col">Asset on Auction</th>
+                <th scope="col">City</th>
+                <th scope="col">Bid Sub mission of Last Date </th>
+                <th scope="col">Reserve Price</th>
+                <th scope="col">EMD</th>
+                <th scope="col">Event Type</th>
+
+                <!-- Add more headings as needed -->
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <!-- Replace "image1.png" with the actual path to your PNG image -->
+                    <img th:src="@{/images/hdfc-removebg-preview.png}" alt="Image 1" height="50">
+                </td>
+                <td>121313</td>
+                <td>All the Price and parcel of the immovable  property bearing<br>
+                    Office No. 207. 2nd Floor.Harist Corparate<br> <a href="#"  data-bs-toggle="modal" data-bs-target="#interestModal">Iam interested</a>
+                </td>
+                <td>Hyderabad</td>
+                <td>11 march 2023</td>
+                <td>200000000</td>
+                <td>200000000</td>
+                <td>SARFASI</td>
+                <!-- Add more data for each row as needed -->
+            </tr>
+            <!-- Repeat the above row structure for a total of 8 rows -->
+            <tr>
+                <td>
+                    <img th:src="@{/images/sbi-removebg-preview.png}" alt="Image 2" height="50">
+                </td>
+                <td>121114</td>
+                <td>All the Price and parcel of the immovable  property bearing<br>
+                    Office No. 207. 2nd Floor.Harist Corparate<br> <a href="#"  data-bs-toggle="modal" data-bs-target="#interestModal">Iam interested</a>
+                </td>
+                <td>Hyderabad</td>
+                <td>11 march 2023</td>
+                <td>200000000</td>
+                <td>200000000</td>
+                <td>SARFASI</td>
+
+            </tr>
+            <tr>
+                <td>
+                    <img th:src="@{/images/icic-removebg-preview.png}" alt="Image 2" height="50">
+                </td>
+                <td>121215</td>
+                <td>All the Price and parcel of the immovable  property bearing<br>
+                    Office No. 207. 2nd Floor.Harist Corparate<br> <a href="#"  data-bs-toggle="modal" data-bs-target="#interestModal">Iam interested</a>
+                </td>
+                <td>Vizag</td>
+                <td>1 May 2023</td>
+                <td>25000000</td>
+                <td>25000000</td>
+                <td>SARFASI</td>
+
+            </tr>
+            <tr>
+                <td>
+                    <img th:src="@{images/axi-removebg-preview.png}" alt="Image 2" height="50">
+                </td>
+                <td>121416</td>
+                <td>All the Price and parcel of the immovable  property bearing<br>
+                    Office No. 207. 2nd Floor.Harist Corparate<br> <a href="#"  data-bs-toggle="modal" data-bs-target="#interestModal">Iam interested</a>
+                </td>
+                <td>Vijayawad</td>
+                <td>23 April 2023</td>
+                <td>229000.00</td>
+                <td>229000.00</td>
+                <td>SARFASI</td>
+
+            </tr>
+
+            <tr th:each="auction : ${auctions}">
+                <td th:text="${auction.bank}"></td>
+                <td th:text="${auction.auctionNumber}"></td>
+                <td>
+                    <span th:text="${auction.assetOnAuction}"></span><br>
+                    <a th:href="'#'" th:data-bs-toggle="'modal'" th:data-bs-target="'#interestModal'">I am interested</a>
+                </td>
+                <td th:text="${auction.city}"></td>
+                <td th:text="${auction.submissionDate}"></td>
+                <td th:text="${auction.price}"></td>
+                <td th:text="${auction.emd}"></td>
+                <td th:text="${auction.eventType}"></td>
+            </tr>
+
+
+            </tbody>
+        </table>
+
+    </div>
+    <section>
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="border">
+                        <div class="row p-1">
+                            <div class="col-sm-12 col-md-8 col-lg-8">Showing 1 to 12 of 86448 entries</div>
+                            <div class="col-sm-12 col-md-4 col-lg-4 mx-end">
+                                <select class="p-2" autocomplete="off" id="order" name="order"><option value="" selected="selected">Sort By</option><option value="Price_DESC">Price: Highest first</option><option value="Price_ASC">Price: Lowest first</option><option value="Recent">Recent</option></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-12 col-md-12">
+                            <div class="mt-3 ">
+                                <div class="card mb-3 ">
+                                    <div class="row g-0">
+                                        <div class="col-md-4" id="sample">
+                                            <div class="image-tag">₹ 3,16,71,000</div>
+                                            <div class="property-type-tag">Commercial Office</div>
+                                            <img src="https://www.eauctionsindia.com/storage/propertytypes/Commerical-Office-117031653184429.jpg" class="img-fluid h-100 w-100" alt="Debts Recovery Tribunal Auctions for Commercial Office in Shaniwar Peth, Pune" title="Debts Recovery Tribunal Auctions for Commercial Office in Shaniwar Peth, Pune">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body propertylist-card-bg">
+                                                <div class="row position-relative">
+                                                    <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/commercial">Commercial</a></div>
+                                                    <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>05-07-2024 11:00 AM</div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_254046">
+                                                        <a href="javascript:;" onclick="addfav(254046,'add')" title="Favorite">
+                                                            <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/254046" class="text-light text-decoration-none linkhover">Debts Recovery Tribunal Auctions for Commercial Office in Shaniwar Peth, Pune</a></p>
+                                                <p class="card-text  text-light">d) All that piece and parcel of Office No. 401/1, Admeasuring 166.63 Sq. Mtrs.,...</p>
+                                                <div class="row mt-2">
+                                                    <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 254046</div>
+                                                    <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/254046" role="button">View More</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-12 col-md-12">
+                            <div class="mt-3 ">
+                                <div class="card mb-3 ">
+                                    <div class="row g-0">
+                                        <div class="col-md-4" id="sample">
+                                            <div class="image-tag">₹ 1,46,97,000</div>
+                                            <div class="property-type-tag">Flat</div>
+                                            <img src="https://www.eauctionsindia.com/storage/propertytypes/Residential-Flat-117031653438472.jpg" class="img-fluid h-100 w-100" alt="Debts Recovery Tribunal Auctions for Flat in Marine Lines, Mumbai" title="Debts Recovery Tribunal Auctions for Flat in Marine Lines, Mumbai">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body propertylist-card-bg">
+                                                <div class="row position-relative">
+                                                    <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                    <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>05-07-2024 11:00 AM</div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_254048">
+                                                        <a href="javascript:;" onclick="addfav(254048,'add')" title="Favorite">
+                                                            <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/254048" class="text-light text-decoration-none linkhover">Debts Recovery Tribunal Auctions for Flat in Marine Lines, Mumbai</a></p>
+                                                <p class="card-text  text-light">(e) All that piece and parcel of Flat No. 104 admeasuring 550 Sq. Ft. i.e. 51.11...</p>
+                                                <div class="row mt-2">
+                                                    <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 254048</div>
+                                                    <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/254048" role="button">View More</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-12 col-md-12">
+                            <div class="mt-3 ">
+                                <div class="card mb-3 ">
+                                    <div class="row g-0">
+                                        <div class="col-md-4" id="sample">
+                                            <div class="image-tag">₹ 2,02,50,000</div>
+                                            <div class="property-type-tag">Land</div>
+                                            <img src="https://www.eauctionsindia.com/storage/propertytypes/Land-117031652595764.jpg" class="img-fluid h-100 w-100" alt="Encore ARC Pvt Ltd Auctions for Land in Vadgaon, Pune" title="Encore ARC Pvt Ltd Auctions for Land in Vadgaon, Pune">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body propertylist-card-bg">
+                                                <div class="row position-relative">
+                                                    <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                    <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>13-06-2024 11:00 AM</div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_256845">
+                                                        <a href="javascript:;" onclick="addfav(256845,'add')" title="Favorite">
+                                                            <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/256845" class="text-light text-decoration-none linkhover">Encore ARC Pvt Ltd Auctions for Land in Vadgaon, Pune</a></p>
+                                                <p class="card-text  text-light">All that piece and parcel of the land admeasuring about 81 R, Gat No 156/2, (Old...</p>
+                                                <div class="row mt-2">
+                                                    <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 256845</div>
+                                                    <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/256845" role="button">View More</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-12 col-md-12">
+                            <div class="mt-3 ">
+                                <div class="card mb-3 ">
+                                    <div class="row g-0">
+                                        <div class="col-md-4" id="sample">
+                                            <div class="image-tag">₹ 30,50,800</div>
+                                            <div class="property-type-tag">Agricultural Land</div>
+                                            <img src="https://www.eauctionsindia.com/storage/propertytypes/Agricultural-Land-117031647833807.jpg" class="img-fluid h-100 w-100" alt="Debts Recovery Tribunal Auctions for Agricultural Land in Dindori, Nashik" title="Debts Recovery Tribunal Auctions for Agricultural Land in Dindori, Nashik">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body propertylist-card-bg">
+                                                <div class="row position-relative">
+                                                    <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                    <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>12-06-2024 01:00 PM</div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_255936">
+                                                        <a href="javascript:;" onclick="addfav(255936,'add')" title="Favorite">
+                                                            <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/255936" class="text-light text-decoration-none linkhover">Debts Recovery Tribunal Auctions for Agricultural Land in Dindori, Nashik</a></p>
+                                                <p class="card-text  text-light">Agricultural Land bearing Survey No. 337 B (P), Area Admeasuring in Acres 02.991...</p>
+                                                <div class="row mt-2">
+                                                    <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 255936</div>
+                                                    <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/255936" role="button">View More</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-12 col-md-12">
+                            <div class="mt-3 ">
+                                <div class="card mb-3 ">
+                                    <div class="row g-0">
+                                        <div class="col-md-4" id="sample">
+                                            <div class="image-tag">₹ 16,00,000</div>
+                                            <div class="property-type-tag">Land</div>
+                                            <img src="https://www.eauctionsindia.com/storage/propertytypes/Land-117031652595764.jpg" class="img-fluid h-100 w-100" alt="DEBT RECOVERY TRIBUNAL-2 Auctions for Land in Kottarakkara, Kollam" title="DEBT RECOVERY TRIBUNAL-2 Auctions for Land in Kottarakkara, Kollam">
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body propertylist-card-bg">
+                                                <div class="row position-relative">
+                                                    <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                    <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>30-05-2024 11:00 AM</div>
+                                                    <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_255983">
+                                                        <a href="javascript:;" onclick="addfav(255983,'add')" title="Favorite">
+                                                            <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/255983" class="text-light text-decoration-none linkhover">DEBT RECOVERY TRIBUNAL-2 Auctions for Land in Kottarakkara, Kollam</a></p>
+                                                <p class="card-text  text-light">All that part and parcel of land having an extent of 4.80 Ares [4.65 Ares as per...</p>
+                                                <div class="row mt-2">
+                                                    <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 255983</div>
+                                                    <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/255983" role="button">View More</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 mb-3">
+                        <section class="mt-2 mb-2">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <!-- Display (Header) -->
+                                        
+                                        <script>
+                                            (adsbygoogle = window.adsbygoogle || []).push({});
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>            </div>
+                </div><div class="row">
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div class="mt-3 ">
+                            <div class="card mb-3 ">
+                                <div class="row g-0">
+                                    <div class="col-md-4" id="sample">
+                                        <div class="image-tag">₹ 86,25,000</div>
+                                        <div class="property-type-tag">Land</div>
+                                        <img src="https://www.eauctionsindia.com/storage/propertytypes/Land-117031652595764.jpg" class="img-fluid h-100 w-100" alt="Union Bank of India Auctions for Land in Ratu, Ranchi" title="Union Bank of India Auctions for Land in Ratu, Ranchi">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body propertylist-card-bg">
+                                            <div class="row position-relative">
+                                                <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>30-05-2024 11:00 AM</div>
+                                                <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_255165">
+                                                    <a href="javascript:;" onclick="addfav(255165,'add')" title="Favorite">
+                                                        <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/255165" class="text-light text-decoration-none linkhover">Union Bank of India Auctions for Land in Ratu, Ranchi</a></p>
+                                            <p class="card-text  text-light">Equitable mortgage of land of Certificate Debtor No 2 vide Sale Deed No 1363 dat...</p>
+                                            <div class="row mt-2">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 255165</div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/255165" role="button">View More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div class="mt-3 ">
+                            <div class="card mb-3 ">
+                                <div class="row g-0">
+                                    <div class="col-md-4" id="sample">
+                                        <div class="image-tag">₹ 30,00,000</div>
+                                        <div class="property-type-tag">House</div>
+                                        <img src="https://www.eauctionsindia.com/storage/propertytypes/House-Residentional-117031652862072.jpg" class="img-fluid h-100 w-100" alt="Karnataka Bank Auctions for House in Warangal, Warangal" title="Karnataka Bank Auctions for House in Warangal, Warangal">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body propertylist-card-bg">
+                                            <div class="row position-relative">
+                                                <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>29-05-2024 11:00 AM</div>
+                                                <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_256346">
+                                                    <a href="javascript:;" onclick="addfav(256346,'add')" title="Favorite">
+                                                        <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/256346" class="text-light text-decoration-none linkhover">Karnataka Bank Auctions for House in Warangal, Warangal</a></p>
+                                            <p class="card-text  text-light">ITEM : 1
+
+                                                All the part and parcel of Residential AC Sheet House and its appurt...</p>
+                                            <div class="row mt-2">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 256346</div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/256346" role="button">View More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div class="mt-3 ">
+                            <div class="card mb-3 ">
+                                <div class="row g-0">
+                                    <div class="col-md-4" id="sample">
+                                        <div class="image-tag">₹ 20,00,000</div>
+                                        <div class="property-type-tag">Plot</div>
+                                        <img src="https://www.eauctionsindia.com/storage/propertytypes/Land-11703165703443.jpg" class="img-fluid h-100 w-100" alt="Karnataka Bank Auctions for Plot in Hanamkonda, Warangal" title="Karnataka Bank Auctions for Plot in Hanamkonda, Warangal">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body propertylist-card-bg">
+                                            <div class="row position-relative">
+                                                <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>29-05-2024 11:00 AM</div>
+                                                <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_256347">
+                                                    <a href="javascript:;" onclick="addfav(256347,'add')" title="Favorite">
+                                                        <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/256347" class="text-light text-decoration-none linkhover">Karnataka Bank Auctions for Plot in Hanamkonda, Warangal</a></p>
+                                            <p class="card-text  text-light">ITEM : 2
+
+                                                All that part and parcel of land measuring 86.25 Sq yards with resid...</p>
+                                            <div class="row mt-2">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 256347</div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/256347" role="button">View More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div class="mt-3 ">
+                            <div class="card mb-3 ">
+                                <div class="row g-0">
+                                    <div class="col-md-4" id="sample">
+                                        <div class="image-tag">₹ 1,40,00,000</div>
+                                        <div class="property-type-tag">Plot</div>
+                                        <img src="https://www.eauctionsindia.com/storage/propertytypes/Land-11703165703443.jpg" class="img-fluid h-100 w-100" alt="Karnataka Bank Auctions for Plot in Srikakulam, Srikakulam" title="Karnataka Bank Auctions for Plot in Srikakulam, Srikakulam">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body propertylist-card-bg">
+                                            <div class="row position-relative">
+                                                <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>29-05-2024 11:00 AM</div>
+                                                <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_256352">
+                                                    <a href="javascript:;" onclick="addfav(256352,'add')" title="Favorite">
+                                                        <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/256352" class="text-light text-decoration-none linkhover">Karnataka Bank Auctions for Plot in Srikakulam, Srikakulam</a></p>
+                                            <p class="card-text  text-light">ITEM : 3
+
+                                                All that part and parcel of Residential property land measuring 266....</p>
+                                            <div class="row mt-2">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 256352</div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/256352" role="button">View More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div class="mt-3 ">
+                            <div class="card mb-3 ">
+                                <div class="row g-0">
+                                    <div class="col-md-4" id="sample">
+                                        <div class="image-tag">₹ 26,00,000</div>
+                                        <div class="property-type-tag">Flat</div>
+                                        <img src="https://www.eauctionsindia.com/storage/propertytypes/Residential-Flat-117031653438472.jpg" class="img-fluid h-100 w-100" alt="Karnataka Bank Auctions for Flat in hamirpur, Hamirpur" title="Karnataka Bank Auctions for Flat in hamirpur, Hamirpur">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body propertylist-card-bg">
+                                            <div class="row position-relative">
+                                                <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>29-05-2024 11:30 AM</div>
+                                                <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_257316">
+                                                    <a href="javascript:;" onclick="addfav(257316,'add')" title="Favorite">
+                                                        <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/257316" class="text-light text-decoration-none linkhover">Karnataka Bank Auctions for Flat in hamirpur, Hamirpur</a></p>
+                                            <p class="card-text  text-light">DESCRIPTION OF THE IMMOVABLE PROPERTY: All That Part and Parcel of Residential F...</p>
+                                            <div class="row mt-2">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 257316</div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/257316" role="button">View More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div class="mt-3 ">
+                            <div class="card mb-3 ">
+                                <div class="row g-0">
+                                    <div class="col-md-4" id="sample">
+                                        <div class="image-tag">₹ 18,00,000</div>
+                                        <div class="property-type-tag">Land And Building</div>
+                                        <img src="https://www.eauctionsindia.com/storage/propertytypes/land-building1697106225.webp" class="img-fluid h-100 w-100" alt="Karnataka Bank Auctions for Land And Building in Pulivendula, Kadapa" title="Karnataka Bank Auctions for Land And Building in Pulivendula, Kadapa">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body propertylist-card-bg">
+                                            <div class="row position-relative">
+                                                <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>29-05-2024 11:00 AM</div>
+                                                <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_258796">
+                                                    <a href="javascript:;" onclick="addfav(258796,'add')" title="Favorite">
+                                                        <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/258796" class="text-light text-decoration-none linkhover">Karnataka Bank Auctions for Land And Building in Pulivendula, Kadapa</a></p>
+                                            <p class="card-text  text-light">ItemNo.1: All that part and parcel of Residential Property, land admeasuring 338...</p>
+                                            <div class="row mt-2">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 258796</div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/258796" role="button">View More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-12 col-md-12">
+                        <div class="mt-3 ">
+                            <div class="card mb-3 ">
+                                <div class="row g-0">
+                                    <div class="col-md-4" id="sample">
+                                        <div class="image-tag">₹ 18,00,000</div>
+                                        <div class="property-type-tag">Land And Building</div>
+                                        <img src="https://www.eauctionsindia.com/storage/propertytypes/land-building1697106225.webp" class="img-fluid h-100 w-100" alt="Karnataka Bank Auctions for Land And Building in Pulivendula, Kadapa" title="Karnataka Bank Auctions for Land And Building in Pulivendula, Kadapa">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body propertylist-card-bg">
+                                            <div class="row position-relative">
+                                                <div class="col-sm-12 col-lg-5 text-light p-1"><i class="fa fa-tags me-2" aria-hidden="true"></i><a class="text-white text-decoration-none linkhover" href="https://www.eauctionsindia.com/category/residential">Residential</a></div>
+                                                <div class="col-sm-12 col-lg-6 text-light p-1"><span>Auction Starts</span><i class="fa fa-calendar me-2 ms-2" aria-hidden="true"></i>29-05-2024 11:00 AM</div>
+                                                <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_258797">
+                                                    <a href="javascript:;" onclick="addfav(258797,'add')" title="Favorite">
+                                                        <i class="fa-regular fa-star fa-2x text-warning position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <p class="card-text fw-bold fs-6 "><a href="https://www.eauctionsindia.com/properties/258797" class="text-light text-decoration-none linkhover">Karnataka Bank Auctions for Land And Building in Pulivendula, Kadapa</a></p>
+                                            <p class="card-text  text-light">Item No. 2: All that part and parcel of Residential Property, land admeasuring 3...</p>
+                                            <div class="row mt-2">
+                                                <div class="col-sm-12 col-md-6 col-lg-6 text-light"><i class="fa fa-id-card-o me-2 " aria-hidden="true"></i>Auction ID :# 258797</div>
+                                                <div class="col-sm-12 col-md-6 col-lg-6 d-lg-flex justify-content-end "><a class="list-btn-bg text-decoration-none text-dark btn-sm vmhover" href="https://www.eauctionsindia.com/properties/258797" role="button">View More</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- PAGINATION START -->
+                    <div class="row justify-content-center">
+                        <div class="col-sm-12 col-lg-12 col-md-12 p-2">
+                            <nav>
+                                <ul class="pagination">
+
+                                    <li class="page-item disabled" aria-disabled="true" aria-label="pagination.previous">
+                                        <span class="page-link" aria-hidden="true">‹</span>
+                                    </li>
+
+
+
+
+
+                                    <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=3">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=4">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=5">5</a></li>
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=6">6</a></li>
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=7">7</a></li>
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=8">8</a></li>
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=9">9</a></li>
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=10">10</a></li>
+
+                                    <li class="page-item disabled" aria-disabled="true"><span class="page-link">...</span></li>
+
+
+
+
+
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=7203">7203</a></li>
+                                    <li class="page-item"><a class="page-link" href="https://www.vertexproserv.com/search?page=7204">7204</a></li>
+
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="https://www.vertexproserv.com/search?page=2" rel="next" aria-label="pagination.next">›</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                    </div>
+                    <!-- PAGINATION END -->
+                </div>
+
+                <div class="col-md-3">
+                    <!-- Verticle Add -->
+                    <ins class="adsbygoogle" style="display: block; transition: none 0s ease 0s; outline: none; border: none; padding: 0px; border-spacing: 0px; margin-left: -12px; width: 343px; z-index: 30; height: 285px;" data-ad-client="ca-pub-6774383521064649" data-ad-slot="5358082587" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_3_host" style="border: none; height: 285px; width: 343px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <footer style="background-color: #3f5833; height: auto !important; margin-top: 10px;">
         <div class="container" style="height: auto !important;">
             <div class="row p-5" style="height: auto !important;">
@@ -242,8 +869,8 @@
                 <div class="col-sm-12 col-md-3 col-lg-3">
                     <h5 class="text-light"><span class="footer-underline ">Support</span></h5>
                     <ul class="list-unstyled ">
-                        <li><a class="text-white text-decoration-none" href="mailto:support@eauctionsindia.com"><i class="fa-solid fa-envelope me-2 " aria-hidden="true"></i>support@vertex.com</a></li>
-                        <li class="text-light"><i class="fa fa-phone me-2" aria-hidden="true"></i><a href="https://www.eauctionsindia.com/contact-us" class="text-decoration-none text-light ">Contact Us</a>
+                        <li><a class="text-white text-decoration-none" href="mailto:support@vertexproserv.com"><i class="fa-solid fa-envelope me-2 " aria-hidden="true"></i>support@vertexproserv.com</a></li>
+                        <li class="text-light"><i class="fa fa-phone me-2" aria-hidden="true"></i><a href="https://www.vertexproserv.com/contact-us" class="text-decoration-none text-light ">Contact Us</a>
                         </li>
                         <li class="text-light">
                             <a target="_blank" href="https://www.facebook.com/" class="f3b459" aria-label="Read more about eauctionsindia on facebook"><i class="fa-brands fa-facebook-f me-1" aria-hidden="true"></i></a>
