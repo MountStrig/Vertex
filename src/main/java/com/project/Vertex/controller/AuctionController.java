@@ -25,6 +25,11 @@ public class AuctionController {
 	       
 	        return "create";
 	    }
+
+		@GetMapping("/Auctiondetails")
+		public String AuctiondetailsPage() {
+		  return "PropertyAuctionDetail";
+		}
 	    
 	    @PostMapping("/addAccount")
 	    public String saveAuction(@ModelAttribute("auction") Auction auction, Model model) {
