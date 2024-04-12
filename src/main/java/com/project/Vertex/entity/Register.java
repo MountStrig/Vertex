@@ -11,96 +11,121 @@ public class Register {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
+	private String name;
+	private Long mobileNumber;
 	private String email;
-	private String mobileNumber;
-	private String preferredLocation;
 	private String password;
-	private String confirmPassword;
+	private String state;
+	private String city;
+	private Long pincode;
+	private String address;
 	private String role = "user";
+	
+	public Register() {
+		
+	}
 
-	
-	
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
-	
-	
 	public Long getId() {
 		return Id;
 	}
+
 	public void setId(Long id) {
 		Id = id;
 	}
 
+	public String getName() {
+		return name;
+	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Long getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(Long mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
 
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
-
-
-	public String getMobileNumber() {
-		return mobileNumber;
-	}
-	public void setMobileNumber(String mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
-
-
-
-	public String getPreferredLocation() {
-		return preferredLocation;
-	}
-	public void setPreferredLocation(String preferredLocation) {
-		this.preferredLocation = preferredLocation;
-	}
-
-
-
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-
-
-	public String getConfirmPassword() {
-		return confirmPassword;
+	public String getState() {
+		return state;
 	}
-	public void setConfirmPassword(String confirmPassword) {
-		this.confirmPassword = confirmPassword;
+
+	public void setState(String state) {
+		this.state = state;
 	}
-	
-	
-	public Register(Long id, String email, String mobileNumber, String preferredLocation, String password,
-			String confirmPassword, String role) {
-		super();
-		Id = id;
-		this.email = email;
-		this.mobileNumber = mobileNumber;
-		this.preferredLocation = preferredLocation;
-		this.password = password;
-		this.confirmPassword = confirmPassword;
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public Long getPincode() {
+		return pincode;
+	}
+
+	public void setPincode(Long pincode) {
+		this.pincode = pincode;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
+
+	public Register(Long id, String name, Long mobileNumber, String email, String password, String state, String city,
+			Long pincode, String address, String role) {
+		super();
+		Id = id;
+		this.name = name;
+		this.mobileNumber = mobileNumber;
+		this.email = email;
+		this.password = password;
+		this.state = state;
+		this.city = city=null;
+		this.pincode = pincode;
+		this.address = address;
+		this.role = role;
+	}
+
 	@Override
 	public String toString() {
-		return "Register [Id=" + Id + ", email=" + email + ", mobileNumber=" + mobileNumber + ", preferredLocation="
-				+ preferredLocation + ", password=" + password + ", confirmPassword=" + confirmPassword + ", role="
-				+ role + "]";
+		return "Register [Id=" + Id + ", name=" + name + ", mobileNumber=" + mobileNumber + ", email=" + email
+				+ ", password=" + password + ", state=" + state + ", city=" + city + ", pincode=" + pincode
+				+ ", address=" + address + ", role=" + role + "]";
 	}
-	public Register() {
-		
-	}
+
+	
 }

@@ -138,43 +138,44 @@
 	              <div class="card-body rounded register-card-bg">
 	                  <div class="p-4">
 	                      <div class="text-center text-light fw-600 fs-4">REGISTER</div>
-	                      <form method="POST" action="https://www.eauctionsindia.com/register" accept-charset="UTF-8" class="" id="registerForm"><input name="_token" type="hidden" value="eEKgXHyYIigjT2j4SkedrXRWuAYUrJ5KKpzVte5N">
+	                      <form method="POST" th:action="@{/saveRegister}" th:object="${register}"  id="createAccountForm">
 	                      <div class="row">
 	                          <div class="col-sm-12 col-md-12 col-lg-12">
 	                              <div class="mt-3">
 	                              <label for="name" class="text-light">Name</label>
-	                              <input class="input-text 	w-100" placeholder="Your Name.." autocomplete="off" name="name" type="text">
+	                              <input class="input-text 	w-100" placeholder="Your Name..." autocomplete="off" th:field="*{name}"  type="text">
 	                              </div>
 								  <div class="mt-3">
+								  <label for="phone" class="text-light">Phone Number</label>
+							      <input class="input-text w-100" placeholder="Your Phone.." autocomplete="off" th:field="*{mobileNumber}" type="number">
+							      </div>
+								  <div class="mt-3">
 	                              <label for="email" class="text-light">Email</label>
-	                              <input class="input-text w-100" placeholder="Your Email.." autocomplete="off" name="email" type="email">
+	                              <input class="input-text w-100" placeholder="Your Email.." autocomplete="off" th:field="*{email}" type="email">
 								  </div>
                                   <div class="mt-3">
 	                              <label for="password" class="text-light">Password</label>
-	                              <input class="input-text w-100" placeholder="Your Password.." autocomplete="off" name="password" type="password" value="">
+	                              <input class="input-text w-100" placeholder="Your Password.." autocomplete="off"  id="passwordreg"  th:field="*{password}" type="password" value="">
                                   </div>
                                   <div class="mt-3">
 	                              <label for="password_confirmation" class="text-light">Confirm Password</label>
-	                              <input class="input-text w-100" placeholder="Your Confirm Password.." autocomplete="off" name="password_confirmation" type="password" value="">
-                                  </div>
-                                  <div class="mt-3">
-	                              <label for="phone" class="text-light">Phone</label>
-	                              <input class="input-text w-100" placeholder="Your Phone.." autocomplete="off" name="phone" type="text">
-                                  </div>
+	                              <input class="input-text w-100" placeholder="Your Confirm Password.." autocomplete="off" id="confirmPassword" name="password_confirmation" type="password" value="">
+								  <span id="confirmPasswordMessage" style="color: red;"></span>    
+							  </div>
 	                          </div>
 	                          <div class="col-sm-12 col-md-12 col-lg-12">
 	                              <div class="row">
 	                                  <div class="col-sm-12 col-md-12 mt-3 col-lg-12 col-xs-12">
 	                                  <label for="state_id" class="text-light">State</label>
-	                                  <select id="state_id" class="select input-text w-100 select2-hidden-accessible" autocomplete="off" name="state_id" data-select2-id="select2-data-state_id" tabindex="-1" aria-hidden="true"><option selected="selected" value="">Your State..</option><option value="" selected="selected" data-select2-id="select2-data-2-3tz0">-- State --</option><option value="41">Andaman and Nicobar Islands</option><option value="1">Andhra Pradesh</option><option value="40">Arunachal Pradesh</option><option value="39">Assam</option><option value="3">Bihar</option><option value="4">Chhattisgarh</option><option value="37">Dadra and Nagar Haveli</option><option value="36">Daman and Diu</option><option value="9">Delhi</option><option value="5">Goa</option><option value="6">Gujarat</option><option value="35">Haryana</option><option value="43">Haveli</option><option value="34">Himachal Pradesh</option><option value="33">Jammu and Kashmir</option><option value="32">Jharkhand</option><option value="13">Karnataka</option><option value="19">Kerala</option><option value="31">Lakshadweep</option><option value="30">Madhya Pradesh</option><option value="12">Maharashtra</option><option value="29">Manipur</option><option value="28">Meghalaya</option><option value="27">Mizoram</option><option value="26">Nagaland</option><option value="25">Odisha</option><option value="24">Puducherry</option><option value="18">Punjab</option><option value="16">Rajasthan</option><option value="23">Sikkim</option><option value="15">Tamil Nadu</option><option value="10">Telangana</option><option value="22">Tripura</option><option value="17">Uttar Pradesh</option><option value="21">Uttarakhand</option><option value="14">West Bengal</option></select></span>
+	                                  <select id="state_id" class="select input-text w-100 select2-hidden-accessible" th:field="*{state}" autocomplete="off" name="state_id" data-select2-id="select2-data-state_id" tabindex="-1" aria-hidden="true"><option selected="selected" value="">Your State..</option><option value="" selected="selected" data-select2-id="select2-data-2-3tz0">-- State --</option><option value="41">Andaman and Nicobar Islands</option><option value="1">Andhra Pradesh</option><option value="40">Arunachal Pradesh</option><option value="39">Assam</option><option value="3">Bihar</option><option value="4">Chhattisgarh</option><option value="37">Dadra and Nagar Haveli</option><option value="36">Daman and Diu</option><option value="9">Delhi</option><option value="5">Goa</option><option value="6">Gujarat</option><option value="35">Haryana</option><option value="43">Haveli</option><option value="34">Himachal Pradesh</option><option value="33">Jammu and Kashmir</option><option value="32">Jharkhand</option><option value="13">Karnataka</option><option value="19">Kerala</option><option value="31">Lakshadweep</option><option value="30">Madhya Pradesh</option><option value="12">Maharashtra</option><option value="29">Manipur</option><option value="28">Meghalaya</option><option value="27">Mizoram</option><option value="26">Nagaland</option><option value="25">Odisha</option><option value="24">Puducherry</option><option value="18">Punjab</option><option value="16">Rajasthan</option><option value="23">Sikkim</option><option value="15">Tamil Nadu</option><option value="10">Telangana</option><option value="22">Tripura</option><option value="17">Uttar Pradesh</option><option value="21">Uttarakhand</option><option value="14">West Bengal</option></select></span>
 	                                  </div>
 	                                  <div class="col-sm-12 col-md-12 mt-3 col-lg-12 col-xs-12">
 	                                  <label for="city_id" class="text-light">City</label>
-	                                  <select id="city_id" class="select input-text w-100 select2-hidden-accessible" autocomplete="off" name="city_id" data-select2-id="select2-data-city_id" tabindex="-1" aria-hidden="true"><option selected="selected" value="" data-select2-id="select2-data-4-047u">Your City..</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-3-jz9n" style="width: 297.333px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-city_id-container" aria-controls="select2-city_id-container"><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+	                                  <select id="city_id" class="select input-text w-100 select2-hidden-accessible" th:field="*{city}" autocomplete="off" name="city_id" data-select2-id="select2-data-city_id" tabindex="-1" aria-hidden="true"><option selected="selected" value="" data-select2-id="select2-data-4-047u">Your City..</option></select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-3-jz9n" style="width: 297.333px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-city_id-container" aria-controls="select2-city_id-container"><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
 	                                  </div>
 	                                  <div class="col-sm-12 col-md-12 mt-3 col-lg-12 col-xs-12">
 	                                  <label for="pincode" class="text-light">Pincode</label>
-	                                  <input class="input-text w-100" placeholder="Your Pincode.." autocomplete="off" name="pincode" type="text">
+	                                  <input class="input-text w-100" placeholder="Your Pincode.." th:field="*{pincode}" autocomplete="off" name="pincode" type="NUMBER">
 	                                  </div>
 	                                  <!--div class="col-sm-12 col-md-12 col-lg-12 col-xs-12">
 	                                  <label for="alerts" class="text-light">Email Alerts</label>
