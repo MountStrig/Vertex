@@ -201,6 +201,38 @@ width : 55%;
   .login-modal {
     margin-top: 130px; /* Adjust the margin-top value as needed */
   }
+	
+#login{
+	background-color: white;
+	
+}
+#login:hover{
+	background-color: #9afd6f;
+	letter-spacing: 3px;
+}
+.modal-content{
+	background-color: #3f5833;
+}
+.register-card-bg {
+    background-color: #3f5833;
+}
+.form-label, .modal-title{
+	color: white;
+}
+#forgetPasswordLink {
+   	display: block; 
+    color: white;   
+    cursor: pointer; 
+    text-align: center; 
+    margin: 0 auto; 
+    width: fit-content; 
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
 
+#forgetPasswordLink:hover {
+    color: blue;
+    text-decoration: none; 
+    text-decoration: underline; 
+}
 
 
