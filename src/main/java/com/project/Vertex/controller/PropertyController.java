@@ -33,7 +33,7 @@ public class PropertyController {
 		return "main";
 	}
 	
-	@PostMapping("/addPropertyForm")
+	@PostMapping("/addPropertyForm")   
     public String addProperty(@ModelAttribute("property") Property property, Model model) {
 		 encodeImage(property);
 		// model.addAttribute("property", new Property());
@@ -42,7 +42,7 @@ public class PropertyController {
 		    model.addAttribute("properties", properties);
         propertyService.saveProperty(property);
         
-        return "main";
+        return "redirect:/adminSuccess";
         
         
     }
