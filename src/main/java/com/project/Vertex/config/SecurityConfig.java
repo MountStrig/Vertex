@@ -40,6 +40,7 @@ public class SecurityConfig implements WebMvcConfigurer {
 						.requestMatchers("/userSuccess").hasAuthority("user")
 						.requestMatchers("/forgetPassword").permitAll()
 						.requestMatchers( "/css/**").permitAll()
+						.requestMatchers( "/Auctiondetails").hasAnyAuthority("user","admin")
 						.requestMatchers("/forgot-password").permitAll()
 						.requestMatchers("/password-request").permitAll()
 						.requestMatchers("/images/**").permitAll()			
