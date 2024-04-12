@@ -46,11 +46,12 @@ public class SecurityConfig implements WebMvcConfigurer {
 						.requestMatchers("/images/**").permitAll()			
 						.requestMatchers("/password").permitAll()
 						.requestMatchers("/saveRegister").permitAll()
+						.requestMatchers("/").permitAll()
 						.requestMatchers("/reset-password").permitAll().anyRequest()
 						.authenticated())
 
 				.formLogin(form -> form
-						.loginPage("/")
+						.loginPage("/login")
 						.loginProcessingUrl("/loginVerification")
 						.successHandler(customSuccessHandler)
 						.permitAll())

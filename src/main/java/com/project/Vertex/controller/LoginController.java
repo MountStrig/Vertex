@@ -32,6 +32,11 @@ public class LoginController {
 	        model.addAttribute("register", new Register()); 
 	        return "index";
 	    }
+	@GetMapping("/login")
+	public String getLoginPage(Model model) {
+
+		return "login";
+	}
 	
 	@GetMapping("/userSuccess")
 	public String getIndexPage1(Model model) {
