@@ -117,6 +117,29 @@ box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
     font-weight: 500;
     border-radius: 10px;
 }
+.details-card-bg, .related-card-bg {
+    background: rgba(161,202,231,.4);
+    box-shadow: 0 3px 5px 0 rgba(31,38,135,.37);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,.18);
+}
+.price-color {
+    color: #006789;
+    font-size: 20px;
+}
+.contact-text {
+    color: #bfeaab;
+}
+.details-card-bg, .related-card-bg {
+    background: #3f5833;
+    box-shadow: 0 3px 5px 0 rgba(31,38,135,.37);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    border-radius: 5px;
+    border: 1px solid rgba(255,255,255,.18);
+}
 .btn-icon, .list-btn-bg, .liveproperty-btn-bg {
     background-color: #9afd6f;
 }
