@@ -19,12 +19,6 @@ public class AuctionController {
 	
 	@Autowired
 	AuctionService auctionService;
-	
-	  @GetMapping("/create")
-	    public String showCreateAuctionPage() {
-	       
-	        return "create";
-	    }
 
 		@GetMapping("/Auctiondetails")
 		public String AuctiondetailsPage() {

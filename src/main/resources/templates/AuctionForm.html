@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Java Entity Classes - Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #bfeaab; /* Set overall background color */
+        }
+        .class-container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #3f5833; /* Dark green background for class containers */
+            color: #ffffff; /* White text color for class containers */
+        }
+        .class-container h2 {
+            color: #ffffff; /* White text color for headings within class containers */
+        }
+        .field {
+            margin-bottom: 8px;
+        }
+        label {
+            font-weight: bold;
+            margin-right: 8px;
+            color: #ffffff; /* White text color for labels */
+        }
+        input[type="text"] {
+            width: 100%; /* Make input fields full width */
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box; /* Include padding and border in width calculation */
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3f5833; /* Dark green background for submit button */
+            color: #ffffff; /* White text color for submit button */
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button[type="submit"]:hover {
+            background-color: #557b4d; /* Darker green background on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Auction Details</h1>
+
+    	<form th:action="@{/saveAuctionForm}" method="post" th:object="${entity}">
+			
+			<!-- AuctionEntity Class -->
+			       <div class="class-container">
+			           <h2>AuctionEntity</h2>
+			           <div class="field">
+			               <label for="auctionId">auctionId:</label>
+			               <input type="number" id="auctionId" name="auctionId" >
+			           </div>
+			           <div class="field">
+			               <label for="propertyTitle">propertyTitle:</label>
+			               <input type="text" id="propertyTitle" name="propertyTitle" >
+			           </div>
+			           <div class="field">
+			               <label for="propertyDescription">propertyDescription:</label>
+			               <input type="text" id="propertyDescription" name="propertyDescription" >
+			           </div>
+			           <div class="field">
+			               <label for="contactDetails">contactDetails:</label>
+			               <input type="text" id="contactDetails" name="contactDetails" >
+			           </div>
+			       </div>
+				   
+				   <!-- BankDetails Class -->
+				           <div class="class-container">
+				               <h2>BankDetails</h2>
+				               <div class="field">
+				                   <label for="bankName">bankName:</label>
+				                   <input type="text" id="bankName" name="bankName" >
+				               </div>
+				               <div class="field">
+				                   <label for="emd">emd:</label>
+				                   <input type="text" id="emd" name="emd" >
+				               </div>
+				               <div class="field">
+				                   <label for="branchName">branchName:</label>
+				                   <input type="text" id="branchName" name="branchName" >
+				               </div>
+				               <div class="field">
+				                   <label for="serviceProvider">serviceProvider:</label>
+				                   <input type="text" id="serviceProvider" name="serviceProvider">
+				               </div>
+				               <div class="field">
+				                   <label for="reservePrice">reservePrice:</label>
+				                   <input type="number" id="reservePrice" name="reservePrice" >
+				               </div>
+				           </div>
+						   
+        <!-- PropertyDetails Class -->
+        <div class="class-container">
+            <h2>PropertyDetails</h2>
+            <div class="field1">
+                <label for="assetCategory">assetCategory:</label>
+                <input type="text" id="assetCategory" name="assetCategory" >
+            </div>
+            <div class="field1">
+                <label for="city">city:</label>
+                <input type="text" id="city" name="city" >
+            </div>
+            <div class="field1">
+                <label for="province">province:</label>
+                <input type="text" id="province" name="province">
+            </div>
+            <div class="field">
+                <label for="area">area:</label>
+                <input type="text" id="area" name="area" >
+            </div>
+            <div class="field">
+                <label for="auctionStartTime">auctionStartTime:</label>
+                <input type="time" id="auctionStartTime" name="auctionStartTime" >
+            </div>
+            <div class="field">
+                <label for="auctionEndDate">auctionEndDate:</label>
+                <input type="date" id="auctionEndDate" name="auctionEndDate" >
+            </div>
+            <div class="field">
+                <label for="applicationSubmissionDate">applicationSubmissionDate:</label>
+                <input type="date" id="applicationSubmissionDate" name="applicationSubmissionDate" >
+            </div>
+            <div class="field">
+                <label for="borrowerName">borrowerName:</label>
+                <input type="text" id="borrowerName" name="borrowerName" >
+            </div>     
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
