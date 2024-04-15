@@ -1,5 +1,7 @@
 package com.project.Vertex.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -45,5 +47,15 @@ public class CombinedController {
         // Redirect to a success page or another appropriate endpoint
         return "redirect:/AuctionForm";
     }
+    
+    @GetMapping("/allAuctionDetails")
+    public String showAllAuctionDetails(Model model) {
+        // Retrieve all details using the service method
+        List<Object[]> allDetails = auctionServices.getAllDetails();
 
+        // Add the retrieved list to the model to be accessed in the view
+        model.addAttribute("allDetails", allDetails);
+
+        return "PropertyAuctionDetail";
+    }
 }

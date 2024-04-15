@@ -1,5 +1,7 @@
 package com.project.Vertex.serviceImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,5 +41,10 @@ public class AuctionServicesImpl implements AuctionServices{
         // Save AuctionEntity (with associated PropertyDetails and BankDetails)
         auctionEntityRepository.save(auctionEntity);
     }
-
+    
+    @Override
+    @Transactional
+    public List<Object[]> getAllDetails() {
+        return auctionEntityRepository.findAllDetails();
+    }
 }
