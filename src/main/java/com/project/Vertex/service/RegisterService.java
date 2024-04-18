@@ -7,4 +7,6 @@ import com.project.Vertex.entity.Register;
 public interface RegisterService {
 	
 	Register saveRegistration(Register register);
+
+	String checkEmailAndSendNotification(String email);
 }
