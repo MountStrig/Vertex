@@ -3,6 +3,8 @@ package com.project.Vertex.controller;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.project.Vertex.entity.AuctionEntity;
+import com.project.Vertex.service.AuctionServices;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -23,13 +25,20 @@ public class LoginController {
 	
 	@Autowired
 	PropertyService propertyService;
+
 	
 	@Autowired
 	AuctionService auctionService;
+	@Autowired
+	AuctionServices auctionServices;
 	
 	 @GetMapping("/")
 	    public String getIndexPage(Model model) {
-	        model.addAttribute("register", new Register()); 
+	        model.addAttribute("register", new Register());
+		 List<AuctionEntity> allDetails = auctionServices.getAllDetails();
+
+		 // Add the retrieved list to the model to be accessed in the view
+		 model.addAttribute("allDetails", allDetails);
 	        return "index";
 	    }
 	@GetMapping("/login")

@@ -44,7 +44,7 @@ public class AuctionServicesImpl implements AuctionServices{
     
     @Override
     @Transactional
-    public List<Object[]> getAllDetails() {
-        return auctionEntityRepository.findAllDetails();
+    public List<AuctionEntity> getAllDetails() {
+        return auctionEntityRepository.findAll();
     }
 }

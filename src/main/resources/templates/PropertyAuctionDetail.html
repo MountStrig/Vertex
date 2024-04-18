@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -59,6 +59,16 @@
                                     <div class="fw-bold col-4 ms-auto">Bank Name </div>
                                     <div class="col-8">:&nbsp; <a href="https://www.vertexproserv.com/bank/debts-recovery-tribunal" class="text-decoration-none contact-text fw-bold">Debts Recovery Tribunal</a></div>
                                     <div class="fw-bold col-4 ms-auto">EMD </div>
+                                    <div th:if="${auction.isPresent()}">
+                                        <p>Auction ID: <span th:text="${auction.get().auctionId}"></span></p>
+                                        <p>Property Title: <span th:text="${auction.get().propertyTitle}"></span></p>
+                                        <p>Property Description: <span th:text="${auction.get().propertyDescription}"></span></p>
+                                        <p>Contact Details: <span th:text="${auction.get().contactDetails}"></span></p>
+                                        <!-- You can display additional details here -->
+                                    </div>
+                                    <div th:unless="${auction.isPresent()}">
+                                        <p>No auction found with the provided ID.</p>
+                                    </div>
                                     <div class="col-8">:&nbsp;₹ 31,68,000</div>
                                     <div class="fw-bold col-4">Branch Name </div>
                                     <div class="col-8">:&nbsp;pune</div>

@@ -1,21 +1,28 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Java Entity Classes - Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
+	<meta charset="UTF-8">
+	<title>Java Entity Classes - Form</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap Icons (optional) -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+	<!-- Bootstrap Datepicker CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		body {
             padding: 20px;
             background-color: #bfeaab; /* Set overall background color */
         }
         .class-container {
             border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 20px;
+            border-radius: 8px;
+            padding: 10px; /* Decrease padding */
+            margin-bottom: 10px; /* Decrease margin */
             background-color: #3f5833; /* Dark green background for class containers */
             color: #ffffff; /* White text color for class containers */
+            width: 80%; /* Decrease width */
+            max-width: 600px; /* Set maximum width */
         }
         .class-container h2 {
             color: #ffffff; /* White text color for headings within class containers */
@@ -28,117 +35,256 @@
             margin-right: 8px;
             color: #ffffff; /* White text color for labels */
         }
-        input[type="text"] {
-            width: 100%; /* Make input fields full width */
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            box-sizing: border-box; /* Include padding and border in width calculation */
+        .custom-submit-btn {
+    background-color: #3f5833;
+    border-color: #3f5833;
+    letter-spacing: 1px; /* Adjust the letter spacing as needed */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Add transition for smooth hover effect */
+}
+
+/* Hover effect for the submit button */
+.custom-submit-btn:hover {
+    background-color: #2b3d24;
+    border-color: #2b3d24;
+    color: #ffffff; /* Change text color on hover */
+}
+
+
+        /* Hover effect for the submit button */
+        .custom-submit-btn:hover {
+            background-color: #2b3d24;
+            border-color: #2b3d24;
         }
-        button[type="submit"] {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #3f5833; /* Dark green background for submit button */
-            color: #ffffff; /* White text color for submit button */
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
+        .container-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
-        button[type="submit"]:hover {
-            background-color: #557b4d; /* Darker green background on hover */
-        }
-    </style>
+        /* Hover effect for input fields */
+input[type="text"]:hover {
+    border-color: #2c2e2d; /* Change border color on hover */
+    box-shadow: 5px 5px 5px rgba(108, 239, 151, 0.5); /* Add a subtle shadow on hover */
+}
+
+        /* Hover effect for form fields */
+.form-control:hover {
+    border-color: #6cef97; /* Change border color on hover */
+}
+
+/* Hover effect for labels */
+.form-label:hover {
+    color: #6cef97; /* Change label color on hover */
+}
+
+	</style>
 </head>
 <body>
-    <h1>Add Auction Details</h1>
+<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #3f5833; width: 100vw;">
 
-    	<form th:action="@{/saveAuctionForm}" method="post" th:object="${entity}">
-			
-			<!-- AuctionEntity Class -->
-			       <div class="class-container">
-			           <h2>AuctionEntity</h2>
-			           <div class="field">
-			               <label for="auctionId">auctionId:</label>
-			               <input type="number" id="auctionId" name="auctionId" >
-			           </div>
-			           <div class="field">
-			               <label for="propertyTitle">propertyTitle:</label>
-			               <input type="text" id="propertyTitle" name="propertyTitle" >
-			           </div>
-			           <div class="field">
-			               <label for="propertyDescription">propertyDescription:</label>
-			               <input type="text" id="propertyDescription" name="propertyDescription" >
-			           </div>
-			           <div class="field">
-			               <label for="contactDetails">contactDetails:</label>
-			               <input type="text" id="contactDetails" name="contactDetails" >
-			           </div>
-			       </div>
-				   
-				   <!-- BankDetails Class -->
-				           <div class="class-container">
-				               <h2>BankDetails</h2>
-				               <div class="field">
-				                   <label for="bankName">bankName:</label>
-				                   <input type="text" id="bankName" name="bankName" >
-				               </div>
-				               <div class="field">
-				                   <label for="emd">emd:</label>
-				                   <input type="text" id="emd" name="emd" >
-				               </div>
-				               <div class="field">
-				                   <label for="branchName">branchName:</label>
-				                   <input type="text" id="branchName" name="branchName" >
-				               </div>
-				               <div class="field">
-				                   <label for="serviceProvider">serviceProvider:</label>
-				                   <input type="text" id="serviceProvider" name="serviceProvider">
-				               </div>
-				               <div class="field">
-				                   <label for="reservePrice">reservePrice:</label>
-				                   <input type="number" id="reservePrice" name="reservePrice" >
-				               </div>
-				           </div>
-						   
-        <!-- PropertyDetails Class -->
-        <div class="class-container">
-            <h2>PropertyDetails</h2>
-            <div class="field1">
-                <label for="assetCategory">assetCategory:</label>
-                <input type="text" id="assetCategory" name="assetCategory" >
-            </div>
-            <div class="field1">
-                <label for="city">city:</label>
-                <input type="text" id="city" name="city" >
-            </div>
-            <div class="field1">
-                <label for="province">province:</label>
-                <input type="text" id="province" name="province">
-            </div>
-            <div class="field">
-                <label for="area">area:</label>
-                <input type="text" id="area" name="area" >
-            </div>
-            <div class="field">
-                <label for="auctionStartTime">auctionStartTime:</label>
-                <input type="time" id="auctionStartTime" name="auctionStartTime" >
-            </div>
-            <div class="field">
-                <label for="auctionEndDate">auctionEndDate:</label>
-                <input type="date" id="auctionEndDate" name="auctionEndDate" >
-            </div>
-            <div class="field">
-                <label for="applicationSubmissionDate">applicationSubmissionDate:</label>
-                <input type="date" id="applicationSubmissionDate" name="applicationSubmissionDate" >
-            </div>
-            <div class="field">
-                <label for="borrowerName">borrowerName:</label>
-                <input type="text" id="borrowerName" name="borrowerName" >
-            </div>     
-        </div>
+	<div class="container-fluid">
+		<img th:src="@{/images/logo-removebg-preview.png}" alt="" width="75" height="50">
+		<a class="navbar-brand ms-4 text-white fw-bold" href="#">VERTEX<br>PROSERV</a>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<!-- <span class="navbar-toggler-icon"></span> -->
+			<i class="bi bi-list text-white"></i>
+		</button>
+		<div class=" justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
 
-        <button type="submit">Submit</button>
-    </form>
 
+
+			<!-- Add this button where you want to trigger the "Create Account" modal -->
+
+			<ul class="navbar-nav ms-1">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+						<button class="ps-4 pe-4 pt-1 pb-1 rounded-pill border-0 fw-bold serach-bar-btn" onclick="closePage()">Close</button>
+					</a>
+				</li>
+			</ul>
+
+			<ul class="navbar-nav ms-1">
+				<li class="nav-item">
+					<a class="nav-link active" aria-current="page" href="index.html" data-bs-toggle="modal" data-bs-target="#loginModal">
+						<button class="ps-4 pe-4 pt-1 pb-1 rounded-pill border-0 fw-bold serach-bar-btn"onclick="logout()">Logout</button>
+					</a>
+				</li>
+			</ul>
+			</form>
+		</div>
+	</div>
+</nav>
+<h1 class="mt-4">Add Auction Details</h1>
+
+<form th:action="@{/saveAuctionForm}" method="post" th:object="${entity}" class="mt-4">
+	<!-- AuctionEntity Class -->
+	<div class="d-flex justify-content-center">
+		<div class="class-container">
+			<h2>Auction</h2>
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label for="auctionId" class="form-label">AuctionId:</label>
+					<input type="text" class="form-control" id="auctionId" name="auctionId">
+				</div>
+				<div class="col-md-6">
+					<label for="propertyTitle" class="form-label">PropertyTitle:</label>
+					<input type="text" class="form-control" id="propertyTitle" name="propertyTitle">
+				</div>
+			</div>
+			<div class="row mb-3">
+				<div class="col-md-6">
+					<label for="contactDetails" class="form-label">ContactDetails:</label>
+					<input type="text" class="form-control" id="contactDetails" name="contactDetails">
+				</div>
+				<div class="col-md-6">
+					<label for="propertyDescription" class="form-label">PropertyDescription:</label>
+					<textarea class="form-control" id="propertyDescription" name="propertyDescription" rows="3"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="d-flex justify-content-center">
+		<div class="class-container">
+			<h2>Bank Details</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="mb-3">
+						<label for="bankName" class="form-label">Bank Name:</label>
+						<input type="text" class="form-control" id="bankName" name="bankName">
+					</div>
+					<div class="mb-3">
+						<label for="branchName" class="form-label">Branch Name:</label>
+						<input type="text" class="form-control" id="branchName" name="branchName">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="mb-3">
+						<label for="emd" class="form-label">EMD:</label>
+						<input type="text" class="form-control" id="emd" name="emd">
+					</div>
+					<div class="mb-3">
+						<label for="serviceProvider" class="form-label">Service Provider:</label>
+						<input type="text" class="form-control" id="serviceProvider" name="serviceProvider">
+					</div>
+					<div class="mb-3">
+						<label for="reservePrice" class="form-label">Reserve Price:</label>
+						<input type="number" class="form-control" id="reservePrice" name="reservePrice">
+					</div>
+				</div>
+			</div>
+			<!-- Add other fields similarly -->
+		</div>
+
+	</div>
+	<div class="d-flex justify-content-center">
+		<!-- PropertyDetails Class -->
+		<div class="class-container">
+			<h2>Property Details</h2>
+			<div class="row">
+				<div class="col-md-6">
+					<div class="mb-3">
+						<label for="assetCategory" class="form-label">Asset Category:</label>
+						<select class="form-control" id="assetCategory" name="assetCategory">
+							<option value="commercial">Commercial</option>
+							<option value="industrial">Industrial</option>
+							<option value="residential">Residential</option>
+						</select>
+					</div>
+
+					<div class="mb-3">
+						<label for="city" class="form-label">City:</label>
+						<input type="text" class="form-control" id="city" name="city">
+					</div>
+					<div class="mb-3">
+						<label for="auctionStartDate" class="form-label">Application Submission  Date:</label>
+						<div class="input-group">
+							<input type="date" class="form-control" id="auctionStartDate" name="auctionStartDate" data-provide="datepicker">
+							<div class="input-group-text"><i class="bi bi-calendar"></i></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="mb-3">
+						<label for="province" class="form-label">Province /State:</label>
+						<input type="text" class="form-control" id="province" name="province">
+					</div>
+					<div class="mb-3">
+						<label for="city" class="form-label">Area:</label>
+						<input type="text" class="form-control" id="city" name="city">
+					</div>
+					<div class="mb-3">
+						<label for="auctionEndDate" class="form-label">Auction Date:</label>
+						<div class="input-group">
+							<input type="date" class="form-control" id="auctionEndDate" name="auctionEndDate" data-provide="datepicker">
+							<div class="input-group-text"><i class="bi bi-calendar"></i></div>
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="auctionStartTime" class="form-label">Auction Start Time:</label>
+						<div class="input-group">
+							<input type="time" class="form-control" name="auctionStartTime">
+							<span class="input-group-text"><i class="bi bi-clock"></i></span> <!-- You can use any icon here -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="mb-3">
+						<label for="imageUpload" class="form-label">Upload Images:</label>
+						<input type="file" class="form-control" id="imageUpload" name="imagefeild" accept="image/*" multiple max="5">
+					</div>
+					<div id="fileNames"></div>
+				</div>
+			</div>
+			<!-- Add other fields similarly -->
+		</div>
+	</div>
+
+	<button type="submit" class="btn btn-primary custom-submit-btn" onclick="highlightFields()">Submit</button>
+
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap Datepicker JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!--script>
+	$(document).ready(function(){
+        // Initialize datepicker for date fields
+        $('[data-provide="datepicker"]').datepicker({
+            showOnFocus: true // Show the calendar when the input field is focused
+        });
+
+        // Update file upload field with selected file names
+        $('#imageUpload').on('change', function(e) {
+            var fileInput = e.target;
+            var fileNamesContainer = $('#fileNames');
+            fileNamesContainer.empty(); // Clear previous file names
+
+            for (var i = 0; i < fileInput.files.length; i++) {
+                var fileName = fileInput.files[i].name;
+                fileNamesContainer.append('<div>' + fileName + '</div>');
+            }
+        });
+
+        // Logout function
+        function logout() {
+            window.location.href = "index.html";
+        }
+
+        // Close page function
+        function closePage() {
+            window.location.href = "main.html";
+        }
+
+        // Highlight input fields function
+        function highlightFields() {
+            // Select all input fields within the containers and add a class for highlighting
+            $('.class-container input').addClass('highlighted');
+        }
+    });
+</script-->
 </body>
 </html>

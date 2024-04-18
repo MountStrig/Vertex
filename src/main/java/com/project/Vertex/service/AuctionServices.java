@@ -10,5 +10,5 @@ public interface AuctionServices {
 	
 	void saveAuctionDetails(AuctionEntity auctionEntity, PropertyDetails propertyDetails, BankDetails bankDetails);
 	
-	List<Object[]> getAllDetails();
+	List<AuctionEntity> getAllDetails();
 }

@@ -17,7 +17,7 @@ public class Auction {
 	private long auctionNumber;
 	private String assetOnAuction;
 	private String city;
-	private LocalDate submissionDate;
+	private LocalDate submissionDate = LocalDate.now();
 	private double price;
 	private long emd;
 	private String eventType;

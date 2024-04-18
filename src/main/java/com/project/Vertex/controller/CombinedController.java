@@ -51,7 +51,7 @@ public class CombinedController {
     @GetMapping("/allAuctionDetails")
     public String showAllAuctionDetails(Model model) {
         // Retrieve all details using the service method
-        List<Object[]> allDetails = auctionServices.getAllDetails();
+        List<AuctionEntity> allDetails = auctionServices.getAllDetails();
 
         // Add the retrieved list to the model to be accessed in the view
         model.addAttribute("allDetails", allDetails);
