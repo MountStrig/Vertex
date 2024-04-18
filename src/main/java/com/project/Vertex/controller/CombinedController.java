@@ -19,7 +19,7 @@ import com.project.Vertex.service.AuctionServices;
 
 @Controller
 public class CombinedController {
-	
+
 	@Autowired
 	AuctionServices auctionServices;
 
@@ -36,18 +36,19 @@ public class CombinedController {
 
         return "AuctionForm"; 
     }
-   
+
     @PostMapping("/saveAuctionForm")
     public String saveAuctionForm(@ModelAttribute("entity") AuctionEntity auctionEntity,
                                   @ModelAttribute("propertyDetails") PropertyDetails propertyDetails,
                                   @ModelAttribute("bankDetails") BankDetails bankDetails) {
         // Call service to save auction details
         auctionServices.saveAuctionDetails(auctionEntity, propertyDetails, bankDetails);
+        System.out.println(propertyDetails);
 
         // Redirect to a success page or another appropriate endpoint
         return "redirect:/AuctionForm";
     }
-    
+
     @GetMapping("/allAuctionDetails")
     public String showAllAuctionDetails(Model model) {
         // Retrieve all details using the service method

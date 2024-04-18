@@ -144,6 +144,9 @@ box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
 #property-top {
 position : relative;
 }
+.custom-submit-btn {
+  margin-left : 80vh
+}
 .list-btn-bg {
     padding: 8px;
     display: inline-block;
