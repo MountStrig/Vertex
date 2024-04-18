@@ -21,9 +21,10 @@ public class CustomUserDetailService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(@RequestParam("username") String username) throws UsernameNotFoundException {
-
-		Register Reg = RegRepo.findByEmail(username);
 		
+		Register Reg = RegRepo.findByEmail(username);//DB
+		System.out.println(username);
+		System.out.println(Reg);
 		if (Reg == null) {
 			throw new UsernameNotFoundException("User not found");
 		}

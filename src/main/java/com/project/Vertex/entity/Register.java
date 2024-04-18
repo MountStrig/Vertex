@@ -1,5 +1,7 @@
 package com.project.Vertex.entity;
 
+import java.util.UUID;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,93 +22,134 @@ public class Register {
 	private Long pincode;
 	private String address;
 	private String role = "user";
+	private String token;
+
 	
 	public Register() {
 		
 	}
 
+
 	public Long getId() {
 		return Id;
 	}
+
 
 	public void setId(Long id) {
 		Id = id;
 	}
 
+
 	public String getName() {
 		return name;
 	}
+
 
 	public void setName(String name) {
 		this.name = name;
 	}
 
+
 	public Long getMobileNumber() {
 		return mobileNumber;
 	}
+
 
 	public void setMobileNumber(Long mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
 
+
 	public String getEmail() {
 		return email;
 	}
+
 
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+
 	public String getPassword() {
 		return password;
 	}
+
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
+
 	public String getState() {
 		return state;
 	}
+
 
 	public void setState(String state) {
 		this.state = state;
 	}
 
+
 	public String getCity() {
 		return city;
 	}
+
 
 	public void setCity(String city) {
 		this.city = city;
 	}
 
+
 	public Long getPincode() {
 		return pincode;
 	}
+
 
 	public void setPincode(Long pincode) {
 		this.pincode = pincode;
 	}
 
+
 	public String getAddress() {
 		return address;
 	}
+
 
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
+
 	public String getRole() {
 		return role;
 	}
+
 
 	public void setRole(String role) {
 		this.role = role;
 	}
 
+
+	public String getToken() {
+		return token;
+	}
+
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Register [Id=" + Id + ", name=" + name + ", mobileNumber=" + mobileNumber + ", email=" + email
+				+ ", password=" + password + ", state=" + state + ", city=" + city + ", pincode=" + pincode
+				+ ", address=" + address + ", role=" + role + ", token=" + token + "]";
+	}
+
+
 	public Register(Long id, String name, Long mobileNumber, String email, String password, String state, String city,
-			Long pincode, String address, String role) {
+			Long pincode, String address, String role, String token) {
 		super();
 		Id = id;
 		this.name = name;
@@ -114,18 +157,14 @@ public class Register {
 		this.email = email;
 		this.password = password;
 		this.state = state;
-		this.city = city=null;
+		this.city = city;
 		this.pincode = pincode;
 		this.address = address;
 		this.role = role;
+		this.token = token;
 	}
 
-	@Override
-	public String toString() {
-		return "Register [Id=" + Id + ", name=" + name + ", mobileNumber=" + mobileNumber + ", email=" + email
-				+ ", password=" + password + ", state=" + state + ", city=" + city + ", pincode=" + pincode
-				+ ", address=" + address + ", role=" + role + "]";
-	}
 
+	
 	
 }

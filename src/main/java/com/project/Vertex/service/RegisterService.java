@@ -6,7 +6,11 @@ import com.project.Vertex.entity.Register;
 
 public interface RegisterService {
 	
-	Register saveRegistration(Register register);
-
-	String checkEmailAndSendNotification(String email);
+		Register saveRegistration(Register register);
+	    String checkEmailAndSendNotification(String email);
+	    String updatePassword(String email, String newPassword);
+	    
+//		void savePasswordResetToken(String email, String token);
+//		boolean isValidPasswordResetToken(String token);
+//		String getEmailByToken(String token);
 }
