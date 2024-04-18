@@ -32,15 +32,15 @@ public class LoginController {
 	        model.addAttribute("register", new Register()); 
 	        return "index";
 	    }
-	@GetMapping("/login")
-	public String getLoginPage(Model model) {
-
-		return "login";
-	}
+		/*
+		 * @GetMapping("/login") public String getLoginPage(Model model) {
+		 * 
+		 * return "login"; }
+		 */
 	
 	@GetMapping("/userSuccess")
 	public String getIndexPage1(Model model) {
-	//model.addAttribute("register", new Register());
+	model.addAttribute("register", new Register());
 		
 		//Retrive All Auction details
 		 List<Auction> auctions = auctionService.getAll();
@@ -59,7 +59,7 @@ public class LoginController {
 	AuctionRequestService auctionRequestService;
 	
 	@PostMapping("/saveAuctionRequest")
-	 public String saveAuctionRequest(@ModelAttribute("request")AuctionRequest auctionRequest, Model model) {
+	public String saveAuctionRequest(@ModelAttribute("request")AuctionRequest auctionRequest, Model model) {
 		   
 		   model.addAttribute("request", new AuctionRequest());
 		   auctionRequestService.saveAuctionRequest(auctionRequest);

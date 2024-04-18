@@ -41,17 +41,18 @@ public class SecurityConfig implements WebMvcConfigurer {
 						.requestMatchers("/forgetPassword").permitAll()
 						.requestMatchers( "/css/**").permitAll()
 						.requestMatchers( "/Auctiondetails").hasAnyAuthority("user","admin")
-						.requestMatchers("/forgot-password").permitAll()
+						.requestMatchers("/forgot").permitAll()
 						.requestMatchers("/password-request").permitAll()
 						.requestMatchers("/images/**").permitAll()			
 						.requestMatchers("/password").permitAll()
 						.requestMatchers("/saveRegister").permitAll()
-					
+						.requestMatchers("/emailLinks").permitAll()
+						.requestMatchers("/forgetPasswordSet").permitAll()
 						.requestMatchers("/reset-password").permitAll().anyRequest()
 						.authenticated())
 
 				.formLogin(form -> form
-						.loginPage("/login")
+						.loginPage("/")
 						.loginProcessingUrl("/loginVerification")
 						.successHandler(customSuccessHandler)
 						.permitAll())

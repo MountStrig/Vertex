@@ -47,7 +47,7 @@ public class RegisterController {
 		        MimeMessage mimeMessage = javaMailSender.createMimeMessage();
 		        MimeMessageHelper helper = new MimeMessageHelper(mimeMessage);
 
-		        String subject = "Welcome to VERTEX PEOSERVE";
+		        String subject = "Welcome to VERTEX PROSERVE";
 		        String emailContent = "Dear " + register.getName() + ",\n\n"
 		                + "Thank you for registering with VERTEX PROSERVE. Here are your registration details:\n\n"
 		                + "Name: " + register.getName() + "\n"

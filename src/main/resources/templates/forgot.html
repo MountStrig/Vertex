@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forget Password</title>
+    <link rel="stylesheet" th:href="@{/css/forget.css}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Password Reset</h2>
+    
+	<form id="passwordResetForm" th:action="@{/forgetPasswordSet}" method="post">
+	    <div class="form-group">
+	        <label for="email" class="font">Email Id:</label>
+	        <input type="text" id="email" name="email" th:value="${email}" readonly>
+	    </div>
+	    <div class="form-group">
+	        <label for="newPassword" class="font">New Password:</label>
+	        <input type="password" id="newPassword" name="newPassword" required>
+	    </div>
+	    <div class="form-group">
+	        <label for="confirmPassword" class="font">Confirm Password:</label>
+	        <input type="password" id="confirmPassword" name="confirmPassword" required>
+	    </div>
+	    <button type="submit">Reset Password</button>
+	</form>
+
+	
+</div>
+<script>
+	$(document).ready(function() {
+	    $('#passwordResetForm').submit(function() {
+	        var newPassword = $('#newPassword').val();
+	        var confirmPassword = $('#confirmPassword').val();
+	
+	        if (newPassword !== confirmPassword) {
+	            alert("Passwords do not match.");
+	            return false; // Prevent form submission
+	        }
+	
+	        return true; // Proceed with form submission
+	    });
+	});
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
