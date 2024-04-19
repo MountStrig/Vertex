@@ -19,14 +19,10 @@ import com.project.Vertex.entity.Intrest;
 import com.project.Vertex.entity.Register;
 import com.project.Vertex.service.AuctionRequestService;
 import com.project.Vertex.service.AuctionService;
-import com.project.Vertex.service.PropertyService;
 
 @Controller
 public class LoginController {
 	
-	@Autowired
-	PropertyService propertyService;
-
 	
 	@Autowired
 	AuctionService auctionService;
@@ -48,6 +44,13 @@ public class LoginController {
 		 * 
 		 * return "login"; }
 		 */
+	 
+	 
+	 @GetMapping("/adminSuccess")
+		public String showAdminPage(Model model) {
+			
+			return "main";
+		}
 	
 	@GetMapping("/userSuccess")
 	public String getIndexPage1(Model model) {
