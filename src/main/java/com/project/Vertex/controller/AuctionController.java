@@ -40,6 +40,14 @@ public class AuctionController {
 	    	auctionService.saveAuction(auction);
 	        return "redirect:/create"; 
 	    }
-	    
+
+		@GetMapping("/callbackdeatils")
+		public String ShowCallbackdetails() {
+			return "Callbacktable";
+		}
+	@GetMapping("/Interestedetails")
+	public String ShowInterestedbackdetails() {
+		return "IamInterested";
+	}
 	       
 }
