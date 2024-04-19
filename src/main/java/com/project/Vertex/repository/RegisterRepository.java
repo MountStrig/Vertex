@@ -10,7 +10,7 @@ public interface RegisterRepository extends JpaRepository<Register, Long>{
 
 	Register findByEmail(String email);
 
-	Register findBytoken(String token);
+	//Register findBytoken(String token);
 	
 	
 

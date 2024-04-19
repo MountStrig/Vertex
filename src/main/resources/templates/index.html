@@ -465,15 +465,56 @@
                             <h3> <span th:text="${auction.propertyTitle}"></span></h3>
                             <h3> <span th:text="${auction.propertyDescription}"></span></h3>
 
-                                <h3> Auction id: <span th:text="${auction.id}"></span></h3>
+                                <h3> Auction id: <span th:text="${auction.auctionId}"></span></h3>
                                 <a th:href="@{/Auctiondetails/{id}(id=${auction.id})}"><button class="btn btn-bg" style="background-color : #9afd6f">view more</button></a>
-                            </div>
+								
+								
+								<button class="btn " type="button" 	data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #9afd6f">I'm Interested</button>
+								
+									
+								 </div>
+								
                         </div>
                     </div>
                 </div>
             </div>
+	
+			
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h1 class="modal-title fs-5" id="exampleModalLabel">Intrested Form</h1>
+			        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			      </div>
+			      <div class="modal-body">
+			        <!-- Input fields -->
+					<form th:action="@{/intrest}" method="post" th:object="${imintrest}">
+			        <div class="mb-3">
+			          <label for="auctionId" class="form-label">Auction ID:</label>
+			          <input type="text" class="form-control" id="auctionId" placeholder="Enter Auction ID"  >
+			        </div>
+			        <div class="mb-3">
+			          <label for="name" class="form-label">Name:</label>
+			          <input type="text" class="form-control" id="name" placeholder="Enter Name" th:field="*{name}" name="name">
+			        </div>
+			        <div class="mb-3">
+			          <label for="phoneNumber" class="form-label">Phone Number:</label>
+			          <input type="text" class="form-control" id="phoneNumber" placeholder="Enter Phone Number" th:field="*{mobileNumber}" name="mobileNumber">
+			        </div>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="submit" class="btn btn-primary">Submit</button>
+			      </div>
+				  </form>
+			    </div>
+			  </div>
+			</div>
 
-
+			
+					
+			
             <footer style="background-color: #3f5833; height: auto !important; margin-top: 10px;">
         <div class="container" style="height: auto !important;">
             <div class="row p-5" style="height: auto !important;">
@@ -528,7 +569,17 @@
         <div class="footer-copyright text-center p-2  text-light " style="background-color: #1C2331;">Copyright © 2024 Vertex.com India All rights reserved. <span class="d-none">Designed &amp; Develped by <a href="https://www.vegawebsolutions.com">Vega Web Solutions</a></span></div>
         <!-- COPY RIGHT END -->
     </footer>
-
+	
+	<script>
+		// JavaScript function to open the modal
+		function openModal() {
+		    // Get the modal element
+		    var modal = document.getElementById("myModal");
+		    
+		    // Display the modal
+		    modal.style.display = "block";
+		}
+	</script>
 
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
