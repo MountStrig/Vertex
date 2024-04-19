@@ -48,6 +48,7 @@ public class SecurityConfig implements WebMvcConfigurer {
 						.requestMatchers("/saveRegister").permitAll()
 						.requestMatchers("/emailLinks").permitAll()
 						.requestMatchers("/forgetPasswordSet").permitAll()
+						.requestMatchers("/intrest").permitAll()
 						.requestMatchers("/reset-password").permitAll().anyRequest()
 						.authenticated())
 
@@ -57,10 +58,16 @@ public class SecurityConfig implements WebMvcConfigurer {
 						.successHandler(customSuccessHandler)
 						.permitAll())
 
-				.logout(form -> form.invalidateHttpSession(true).clearAuthentication(true)
-						.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-						.logoutSuccessUrl("/login?logout").permitAll());
-
+//				.logout(form -> form.invalidateHttpSession(true).clearAuthentication(true)
+//						.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+//						.logoutSuccessUrl("/login?logout").permitAll());
+				 .logout(logout ->
+		         logout
+		                 .logoutUrl("/logout") // logout URL
+		                 .logoutSuccessUrl("/login?logout") // redirect after logout
+		                 .invalidateHttpSession(true) // invalidate session
+		                 .deleteCookies("JSESSIONID") // delete cookies
+		                 .permitAll());
 
 		return http.build();
 

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.project.Vertex.entity.Auction;
 import com.project.Vertex.entity.AuctionRequest;
+import com.project.Vertex.entity.Intrest;
 import com.project.Vertex.entity.Register;
 import com.project.Vertex.service.AuctionRequestService;
 import com.project.Vertex.service.AuctionService;
@@ -38,6 +39,7 @@ public class LoginController {
 		 List<AuctionEntity> allDetails = auctionServices.getAllDetails();
 
 		 // Add the retrieved list to the model to be accessed in the view
+		 model.addAttribute("imintrest", new Intrest());
 		 model.addAttribute("allDetails", allDetails);
 	        return "index";
 	    }

@@ -22,7 +22,6 @@ public class Register {
 	private Long pincode;
 	private String address;
 	private String role = "user";
-	private String token;
 
 	
 	public Register() {
@@ -130,26 +129,16 @@ public class Register {
 	}
 
 
-	public String getToken() {
-		return token;
-	}
-
-
-	public void setToken(String token) {
-		this.token = token;
-	}
-
-
 	@Override
 	public String toString() {
 		return "Register [Id=" + Id + ", name=" + name + ", mobileNumber=" + mobileNumber + ", email=" + email
 				+ ", password=" + password + ", state=" + state + ", city=" + city + ", pincode=" + pincode
-				+ ", address=" + address + ", role=" + role + ", token=" + token + "]";
+				+ ", address=" + address + ", role=" + role + "]";
 	}
 
 
 	public Register(Long id, String name, Long mobileNumber, String email, String password, String state, String city,
-			Long pincode, String address, String role, String token) {
+			Long pincode, String address, String role) {
 		super();
 		Id = id;
 		this.name = name;
@@ -161,10 +150,10 @@ public class Register {
 		this.pincode = pincode;
 		this.address = address;
 		this.role = role;
-		this.token = token;
 	}
 
 
+	
 	
 	
 }
