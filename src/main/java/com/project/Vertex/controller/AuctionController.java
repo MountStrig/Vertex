@@ -45,9 +45,9 @@ public class AuctionController {
 		public String ShowCallbackdetails() {
 			return "Callbacktable";
 		}
-	@GetMapping("/Interestedetails")
-	public String ShowInterestedbackdetails() {
-		return "IamInterested";
-	}
+//	@GetMapping("/Interestedetails")
+//	public String ShowInterestedbackdetails() {
+//		return "IamInterested";
+//	}
 	       
 }

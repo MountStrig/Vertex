@@ -6,49 +6,34 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
-<table class="table table-striped ">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">auctionId</th>
-        <th scope="col">propertyTitle</th>
-        <th scope="col">Name</th>
-
-        <th scope="col">Phone</th>
-        <th>View Details</th>
-
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td>9790451898</td>
-
-        <td><a href=""><button class="btn btn-primary">Details</button></a></td>
-
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td>9790451898</td>
-
-        <td><a href=""><button class="btn btn-primary">Details</button></a></td>
-
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-        <td>9790451898</td>
-
-        <td><a href=""><button class="btn btn-primary">Details</button></a></td>
-    </tr>
-    </tbody>
-</table>
+	
+	<table class="table table-striped">
+	        <thead>
+	            <tr>
+	                <th scope="col">Sl.No</th>
+	                <th scope="col">Auction ID</th>
+	                <th scope="col">Name</th>
+	                <th scope="col">Phone Number</th>
+	                <!--<th>View Details</th>-->
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <tr th:each="intrest, rowStat : ${intrestList}">
+	                <td th:text="${rowStat.index + 1}"></td>
+	                <td th:text="${intrest.auctionId}"></td>
+	                <td th:text="${intrest.name}"></td>
+	                <td th:text="${intrest.mobileNumber}"></td>
+	                <td>
+	                   
+					<!--	<a th:if="${intrest.auctionId == action.auctionId}" th:href="@{'/Auctiondetails/' + ${intrest.auctionId}}">
+						                      <button class="btn btn-primary">Details</button>
+						                  </a>-->
+										 
+						
+	                </td>
+	            </tr>
+	        </tbody>
+	    </table>
+	
 </body>
 </html>

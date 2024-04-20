@@ -469,8 +469,8 @@
                                 <a th:href="@{/Auctiondetails/{id}(id=${auction.id})}"><button class="btn btn-bg" style="background-color : #9afd6f">view more</button></a>
 								
 								
-								<button class="btn " type="button" 	data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #9afd6f">I'm Interested</button>
-								
+								<button class="btn" type="button" th:onclick="'setAuctionId(\'' + ${auction.auctionId} + '\')'" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #9afd6f">I'm Interested</button>
+
 									
 								 </div>
 								
@@ -493,7 +493,7 @@
 					<form th:action="@{/intrest}" method="post" th:object="${imintrest}">
 			        <div class="mb-3">
 			          <label for="auctionId" class="form-label">Auction ID:</label>
-			          <input type="text" class="form-control" id="auctionId" placeholder="Enter Auction ID"  >
+			          <input type="text" class="form-control" 	id="auctionId"  placeholder="Enter Auction ID" th:field="*{auctionId}"  readonly>
 			        </div>
 			        <div class="mb-3">
 			          <label for="name" class="form-label">Name:</label>
@@ -569,6 +569,17 @@
         <div class="footer-copyright text-center p-2  text-light " style="background-color: #1C2331;">Copyright © 2024 Vertex.com India All rights reserved. <span class="d-none">Designed &amp; Develped by <a href="https://www.vegawebsolutions.com">Vega Web Solutions</a></span></div>
         <!-- COPY RIGHT END -->
     </footer>
+	
+	
+	<script>
+	    function setAuctionId(auctionId) {
+	        // Set the auctionId value in the modal input field
+			console.log(auctionId);
+	        document.getElementById('auctionId').value = auctionId;
+	    }
+	</script>
+
+	
 	
 	<script>
 		// JavaScript function to open the modal
