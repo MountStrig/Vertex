@@ -14,13 +14,13 @@
 	                <th scope="col">Auction ID</th>
 	                <th scope="col">Name</th>
 	                <th scope="col">Phone Number</th>
-	                <!--<th>View Details</th>-->
+	                <th>View Details</th>
 	            </tr>
 	        </thead>
 	        <tbody>
 	            <tr th:each="intrest, rowStat : ${intrestList}">
 	                <td th:text="${rowStat.index + 1}"></td>
-	                <td th:text="${intrest.auctionId}"></td>
+	                <td th:text="${intrest.auctionId.auctionId}"></td>
 	                <td th:text="${intrest.name}"></td>
 	                <td th:text="${intrest.mobileNumber}"></td>
 	                <td>
@@ -28,7 +28,7 @@
 					<!--	<a th:if="${intrest.auctionId == action.auctionId}" th:href="@{'/Auctiondetails/' + ${intrest.auctionId}}">
 						                      <button class="btn btn-primary">Details</button>
 						                  </a>-->
-										 
+									<a th:href="@{/Auctiondetails/{id}(id=${intrest.auctionId.id})}"><button>Details</button></a>	 
 						
 	                </td>
 	            </tr>

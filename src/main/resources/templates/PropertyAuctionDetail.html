@@ -19,8 +19,14 @@
                         <div class="row">
 
                             <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1">Auction Id: <span class="fw-bold" th:text="${auction.get().auctionId}"></span></div>
-                            <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1"><button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropCallback" fdprocessedid="u3mwyv">Request Callback</button>
-                            </div>
+                           
+							<div class="col-sm-12 col-md-4 col-lg-4 text-center p-1">
+							    <a th:href="@{'/your-url-here/' + ${fdprocessedid}}" data-bs-toggle="modal" data-bs-target="#staticBackdropCallback">
+							        <button type="button" class="btn btn-warning btn-sm">Request Callback</button>
+							    </a>
+							</div>
+
+							
                             <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_254046">
                                 <a href="javascript:;" onclick="addfav(254046,'add')" title="Favorite">
                                     <i class="fa-regular fa-star fa-2x f3b459 position-absolute top-0 right-0 end-0" aria-hidden="true"></i>

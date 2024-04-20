@@ -297,5 +297,7 @@ width : 55%;
     text-decoration: none; 
     text-decoration: underline; 
 }
-
+  .item-container {
+        margin-bottom: 10px;
+    }
 

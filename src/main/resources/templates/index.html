@@ -443,7 +443,7 @@
         <div  class="container-fluid ">
 
             <div th:each="auction : ${allDetails}" class="row mt-2">
-                <div class="col-md-6" id="property-top">
+                <div class="col-md-6" id="property-top" style="margin-bottom: 10px;">
                     <div th:text="${auction.bankDetails.emd}" class="img-emd"></div>
                     <div th:text="${auction.propertyDetails.assetCategory}" class="property-type-tag"></div>
                     <img th:src="@{/images/8-removebg-preview.png}" class="img-fluid h-100 w-100" alt="Debts Recovery Tribunal Auctions for Commercial Office in Shaniwar Peth, Pune" title="Debts Recovery Tribunal Auctions for Commercial Office in Shaniwar Peth, Pune">
@@ -469,7 +469,7 @@
                                 <a th:href="@{/Auctiondetails/{id}(id=${auction.id})}"><button class="btn btn-bg" style="background-color : #9afd6f">view more</button></a>
 								
 								
-								<button class="btn" type="button" th:onclick="'setAuctionId(\'' + ${auction.auctionId} + '\')'" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #9afd6f">I'm Interested</button>
+								<button class="btn" type="button" th:onclick="'setAuctionId(\'' + ${auction.id} + '\')'" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #9afd6f">I'm Interested</button>
 
 									
 								 </div>
@@ -492,7 +492,7 @@
 			        <!-- Input fields -->
 					<form th:action="@{/intrest}" method="post" th:object="${imintrest}">
 			        <div class="mb-3">
-			          <label for="auctionId" class="form-label">Auction ID:</label>
+			          <label for="auctionId" class="form-label">Property List ID:</label>
 			          <input type="text" class="form-control" 	id="auctionId"  placeholder="Enter Auction ID" th:field="*{auctionId}"  readonly>
 			        </div>
 			        <div class="mb-3">

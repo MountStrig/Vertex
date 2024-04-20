@@ -1,9 +1,12 @@
 package com.project.Vertex.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Intrest {
@@ -12,7 +15,9 @@ public class Intrest {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private Long auctionId;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "auction_details_id")
+	private AuctionEntity auctionId;
 	private String name;
 	private String mobileNumber;
 	
@@ -28,11 +33,11 @@ public class Intrest {
 		this.id = id;
 	}
 
-	public Long getAuctionId() {
+	public AuctionEntity getAuctionId() {
 		return auctionId;
 	}
 
-	public void setAuctionId(Long auctionId) {
+	public void setAuctionId(AuctionEntity auctionId) {
 		this.auctionId = auctionId;
 	}
 
@@ -52,7 +57,7 @@ public class Intrest {
 		this.mobileNumber = mobileNumber;
 	}
 
-	public Intrest(Long id, Long auctionId, String name, String mobileNumber) {
+	public Intrest(Long id, AuctionEntity auctionId, String name, String mobileNumber) {
 		super();
 		this.id = id;
 		this.auctionId = auctionId;
@@ -65,7 +70,7 @@ public class Intrest {
 		return "Intrest [id=" + id + ", auctionId=" + auctionId + ", name=" + name + ", mobileNumber=" + mobileNumber
 				+ "]";
 	}
-	
+
 	
 	
 }
