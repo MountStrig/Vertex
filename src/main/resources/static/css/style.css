@@ -110,6 +110,9 @@ box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
 .bg-auctions {
     background-color: #3f5833;
 }
+.bg-auctions1 {
+    background-color : #3f5833;
+}
 .btn-bg {
     backkground-color : #9afd6f !important;
 }
@@ -138,8 +141,11 @@ box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
     border-radius: 10px;
 }
 .bg-auctions h3, span {
- color : white;
+ color: #3f5833;
  font-family : roboto;
+}
+.bg-auctions1 h3, span {
+    color : white;
 }
 #property-top {
 position : relative;
@@ -166,11 +172,9 @@ position : relative;
     color: #006789;
     font-size: 20px;
 }
-.contact-text {
-    color: #bfeaab;
-}
+
 .details-card-bg, .related-card-bg {
-    background: #3f5833;
+    background: #bfeaab;
     box-shadow: 0 3px 5px 0 rgba(31,38,135,.37);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(1px);
@@ -180,9 +184,8 @@ position : relative;
 .btn-icon, .list-btn-bg, .liveproperty-btn-bg {
     background-color: #9afd6f;
 }
-a:hover {
-text-decoration : none;
-color : white;
+a {
+ color : #3f5833 !important;
 }
 .button {
 width : 55%;
