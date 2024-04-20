@@ -19,14 +19,8 @@
                         <div class="row">
 
                             <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1">Auction Id: <span class="fw-bold" th:text="${auction.get().auctionId}"></span></div>
-                           
-							<div class="col-sm-12 col-md-4 col-lg-4 text-center p-1">
-							    <a th:href="@{'/your-url-here/' + ${fdprocessedid}}" data-bs-toggle="modal" data-bs-target="#staticBackdropCallback">
-							        <button type="button" class="btn btn-warning btn-sm">Request Callback</button>
-							    </a>
-							</div>
-
-							
+                            <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1"><button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdropCallback" fdprocessedid="u3mwyv">Request Callback</button>
+                            </div>
                             <div class="col-sm-12 col-md-4 col-lg-4 text-center p-1 favContainer_254046">
                                 <a href="javascript:;" onclick="addfav(254046,'add')" title="Favorite">
                                     <i class="fa-regular fa-star fa-2x f3b459 position-absolute top-0 right-0 end-0" aria-hidden="true"></i>
@@ -37,12 +31,12 @@
                 </div>
                 <div class="card mt-3">
                     <div class="card-body details-card-bg">
-                        <h1 class="fw-bold"><a href="https://www.vertexproserv.com/properties/254046" th:text="${auction.get().propertyTitle}" class="text-decoration-none text-dark">Debts Recovery Tribunal Auctions for Commercial Office in Shaniwar Peth, Pune</a></h1>
+                        <h1 class="fw-bold"><a href="https://www.vertexproserv.com/properties/254046" class="text-decoration-none text-dark">Debts Recovery Tribunal Auctions for Commercial Office in Shaniwar Peth, Pune</a></h1>
                         <div class="row mt-3">
                             <div class="col-sm-12 col-lg-3 col-md-3"><i class="fa fa-building-o me-1" aria-hidden="true"></i>
-                                <a href="https://www.vertexproserv.com/category/commercial" class="text-decoration-none contact-text fw-bold" th:text="${auction.get().propertyDetails.assetCategory}"></a></div>
+                                <a href="https://www.vertexproserv.com/category/commercial" class="text-decoration-none contact-text fw-bold">Commercial</a></div>
                             <div class="col-sm-12 col-lg-3 col-md-3"><i class="fa fa-map-marker me-1" aria-hidden="true"></i>
-                                <a href="https://www.vertexproserv.com/city/pune" class="text-decoration-none contact-text fw-bold" th:text="${auction.get().propertyDetails.city}"></a>
+                                <a href="https://www.vertexproserv.com/city/pune" class="text-decoration-none contact-text fw-bold">Pune</a>
                             </div>
                             <div class="col-sm-12 col-lg-3 col-md-3"><i class="fa fa-calendar me-1" aria-hidden="true"></i>
                                 05-07-2024 11:00 AM</div>
@@ -63,7 +57,7 @@
                             <div class="col-sm-12 col-lg-6 col-md-6 d-flex flex-column  justify-content-center">
                                 <div class="row">
                                     <div class="fw-bold col-4 ms-auto">Bank Name </div>
-                                    <div class="col-8">:&nbsp; <a th:text="${auction.get().bankDetails.bankName}" href="https://www.vertexproserv.com/bank/debts-recovery-tribunal" class="text-decoration-none contact-text fw-bold"></a></div>
+                                    <div class="col-8">:&nbsp; <a href="https://www.vertexproserv.com/bank/debts-recovery-tribunal" class="text-decoration-none contact-text fw-bold">Debts Recovery Tribunal</a></div>
                                     <div class="fw-bold col-4 ms-auto">EMD </div>
                                     <div th:if="${auction.isPresent()}">
                                         <p>Auction ID: <span th:text="${auction.get().auctionId}"></span></p>
@@ -92,15 +86,15 @@
                 <div class="card mt-3">
                     <div class="card-body details-card-bg">
                         <div class="fw-bold mb-3">Description</div>
-                        <p th:text="${auction.get().propertyDescription}"></p>
+                        <p>d) All that piece and parcel of Office No. 401/1, Admeasuring 166.63 Sq. Mtrs., Office No. 401/2 admeasuring 1091.57 Sq.Ft. i.e. 101.41 Sq. Mtrs. and Office No. 401/3 admeasuring 378.67 Sq. Ft. i.e. 35.18 Sq. Mtrs. on fifth floor in building known as 'Nav Maharashtra House', situated at City Survey No. 43, Shaniwar Peth, within the limits of Pune Municipal&nbsp;Corporation and also within the limits of Registration District Pune, Sub Registration District Haveli, District Pune and Bounded as On or Towards the East: Road, On or Towards the South: Road, On or Towards the West: Land &amp; CTS No. 48 &amp; 56C, On or Towards the North: CTS No. 42. That the said property is owned and possessed by CD No. 2.</p>
                         <div class="row mt-2">
-                            <div class="col-sm-12 col-md-4 col-lg-4"><span class="fw-bold">Province/State:</span><span class="contact-text fw-bold">&nbsp;<a href="https://www.vertexproserv.com/auctions-in-maharashtra" class="text-decoration-none contact-text fw-bold" th:text="${auction.get().propertyDetails.province}" ></a></span></div>
-                            <div class="col-sm-12 col-md-4 col-lg-4"><span class="fw-bold" >City/Town:<span th:text="${auction.get().propertyDetails.city}"></span></span>
+                            <div class="col-sm-12 col-md-4 col-lg-4"><span class="fw-bold">Province/State:</span><span class="contact-text fw-bold">&nbsp;<a href="https://www.vertexproserv.com/auctions-in-maharashtra" class="text-decoration-none contact-text fw-bold">Maharashtra</a></span></div>
+                            <div class="col-sm-12 col-md-4 col-lg-4"><span class="fw-bold">City/Town:</span>
                                 <span class="contact-text fw-bold">&nbsp;
-                                        <a href="https://www.vertexproserv.com/city/pune" class="text-decoration-none contact-text fw-bold"></a>
+                                        <a href="https://www.vertexproserv.com/city/pune" class="text-decoration-none contact-text fw-bold">Pune</a>
                                         </span></div>
 
-                            <div class="col-sm-12 col-md-4 col-lg-4"><span class="fw-bold">Area/Town:</span><span th:text="${auction.get().propertyDetails.area}">&nbsp;</span></div>
+                            <div class="col-sm-12 col-md-4 col-lg-4"><span class="fw-bold">Area/Town:</span><span>&nbsp;Shaniwar Peth</span></div>
                         </div>
                     </div>
                 </div>
@@ -120,7 +114,7 @@
                                     <div class="fw-bold col-4 ms-auto">Borrower Name </div>
                                     <div class="col-8">:&nbsp;M/s. Pranav Agro Industries</div>
                                     <div class="fw-bold col-4 ms-auto">Asset Category</div>
-                                    <div class="col-8">:&nbsp;<a href="https://www.vertexproserv.com/category/commercial" th:text = "${auction.get().propertyDetails.assetCategory}"  class="text-decoration-none contact-text fw-bold" ></a></div>
+                                    <div class="col-8">:&nbsp;<a href="https://www.vertexproserv.com/category/commercial" class="text-decoration-none contact-text fw-bold">Commercial</a></div>
                                     <div class="fw-bold col-4">Property Type </div>
                                     <div class="col-8">:&nbsp;Commercial Office</div>
                                     <div class="fw-bold col-4 ms-auto">Auction Type </div>
@@ -131,11 +125,11 @@
                             <div class="col-sm-12 col-lg-6 col-md-6 d-flex flex-column  justify-content-center">
                                 <div class="row">
                                     <div class="fw-bold col-7">Auction Start Time</div>
-                                    <div class="col-5" th:text="${auction.get().propertyDetails.auctionStartTime}"></div>
+                                    <div class="col-5">:&nbsp;05-07-2024 11:00 AM</div>
                                     <div class="fw-bold col-7 ms-auto">Auction End Date </div>
-                                    <div class="col-5" th:text="${auction.get().propertyDetails.auctionStartTime}"></div>
+                                    <div class="col-5">:&nbsp;05-07-2024 03:00 PM</div>
                                     <div class="fw-bold col-7">Application Submision Date</div>
-                                    <div class="col-5" th:text = "${auction.get().propertyDetails.auctionEndDate}">:&nbsp;04-08-2024 05:00 PM</div>
+                                    <div class="col-5">:&nbsp;04-08-2024 05:00 PM</div>
                                 </div>
                             </div>
                         </div>
