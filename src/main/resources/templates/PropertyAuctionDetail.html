@@ -55,7 +55,7 @@
                         <div class="row">
                             <div class="col-sm-6 col-md-6 col-lg-6 fw-bold">Bank Details</div>
                             <div class="col-sm-6 col-md-6 col-lg-6"><span class="fw-bold">Reserve
-                    Price:</span><span class="price-color fw-bold">&nbsp;₹ 3,16,71,000
+                    Price:</span><span th:text = "${auction.get().bankDetails.reservePrice}" class="price-color fw-bold">&nbsp;
                     </span>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                                 <div class="row">
                                     <div class="fw-bold col-4 ms-auto">Bank Name </div>
                                     <div class="col-8">:&nbsp; <a th:text="${auction.get().bankDetails.bankName}" href="https://www.vertexproserv.com/bank/debts-recovery-tribunal" class="text-decoration-none contact-text fw-bold"></a></div>
-                                    <div class="fw-bold col-4 ms-auto">EMD </div>
+                                    <div class="fw-bold col-4 ms-auto">EMD <span th:text = "${auction.get().bankDetails.emd}" class="price-color fw-bold"> </div>
                                     <div th:if="${auction.isPresent()}">
                                         <p>Auction ID: <span th:text="${auction.get().auctionId}"></span></p>
                                         <p>Property Title: <span th:text="${auction.get().propertyTitle}"></span></p>
