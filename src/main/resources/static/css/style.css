@@ -110,6 +110,9 @@ box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
 .bg-auctions {
     background-color: #3f5833;
 }
+.bg-auctions1 {
+    background-color : #3f5833;
+}
 .btn-bg {
     backkground-color : #9afd6f !important;
 }
@@ -140,6 +143,9 @@ box-shadow: 0 10px 20px rgba(63,88,51,.19), 0 6px 6px rgba(63,88,51,.23);
 .bg-auctions h3, span {
  color: #3f5833;
  font-family : roboto;
+}
+.bg-auctions1 h3, span {
+    color : white;
 }
 #property-top {
 position : relative;
