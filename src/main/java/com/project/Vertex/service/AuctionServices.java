@@ -11,4 +11,6 @@ public interface AuctionServices {
 	void saveAuctionDetails(AuctionEntity auctionEntity, PropertyDetails propertyDetails, BankDetails bankDetails);
 	
 	List<AuctionEntity> getAllDetails();
+
+	AuctionEntity findById(Long auctionId);
 }

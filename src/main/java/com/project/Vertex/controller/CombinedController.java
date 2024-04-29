@@ -59,4 +59,8 @@ public class CombinedController {
 
         return "PropertyAuctionDetail";
     }
+    
+    
+    
+    
 }

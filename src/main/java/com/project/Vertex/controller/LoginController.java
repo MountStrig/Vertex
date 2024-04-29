@@ -13,19 +13,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.project.Vertex.entity.Auction;
 import com.project.Vertex.entity.AuctionRequest;
 import com.project.Vertex.entity.Intrest;
 import com.project.Vertex.entity.Register;
 import com.project.Vertex.service.AuctionRequestService;
-import com.project.Vertex.service.AuctionService;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Controller
 public class LoginController {
 	
 	
-	@Autowired
-	AuctionService auctionService;
 	@Autowired
 	AuctionServices auctionServices;
 	
@@ -37,6 +37,27 @@ public class LoginController {
 		 // Add the retrieved list to the model to be accessed in the view
 		 model.addAttribute("imintrest", new Intrest());
 		 model.addAttribute("allDetails", allDetails);
+		 boolean isAuthenticatedFromDb = false;
+
+		    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		    if (authentication != null && authentication.isAuthenticated()) {
+		        Object principal = authentication.getPrincipal();
+		        if (principal instanceof UserDetails) {
+		            // Check if the UserDetails are loaded from your database
+		            UserDetails userDetails = (UserDetails) principal;
+		            System.out.println(userDetails);
+		            // Example: Check if the UserDetails has a specific role or attribute
+		            if (userDetails.getUsername() != null) {
+		                // This condition can be customized based on your UserDetails implementation
+		                isAuthenticatedFromDb = true;
+		                System.out.println("Set to true");
+		            }
+		        }
+		    }
+		    System.out.println(isAuthenticatedFromDb);
+
+		    // Add a model attribute to indicate specific authentication status
+		    model.addAttribute("isAuthenticatedFromDb", isAuthenticatedFromDb);
 	        return "index";
 	    }
 		/*
@@ -55,16 +76,9 @@ public class LoginController {
 	@GetMapping("/userSuccess")
 	public String getIndexPage1(Model model) {
 	model.addAttribute("register", new Register());
-		
-		//Retrive All Auction details
-		 List<Auction> auctions = auctionService.getAll();
-		 auctions.forEach(auction -> auction.setSubmissionDate(LocalDate.now()));
-	        System.out.println("Number of auctions retrieved: " + auctions.size());
-	       
 	        
 	        // Add a new instance of AuctionRequest to the model for the form
 	        model.addAttribute("request", new AuctionRequest());
-	        model.addAttribute("auctions", auctions);
 	        
 	        return "index1";
 	}	

@@ -1,6 +1,7 @@
 package com.project.Vertex.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,5 +47,17 @@ public class AuctionServicesImpl implements AuctionServices{
     @Transactional
     public List<AuctionEntity> getAllDetails() {
         return auctionEntityRepository.findAll();
+    }
+
+    public AuctionEntity findById(Long auctionId) {
+        // Use AuctionEntityRepository to find AuctionEntity by ID
+        Optional<AuctionEntity> optionalAuctionEntity = auctionEntityRepository.findById(auctionId);
+
+        // Check if AuctionEntity was found
+        if (optionalAuctionEntity.isPresent()) {
+            return optionalAuctionEntity.get(); // Return the found AuctionEntity
+        } else {
+            return null; // Return null if AuctionEntity with given ID is not found
+        }
     }
 }

@@ -16,17 +16,17 @@ public class PropertyDetails {
 		@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
-
+		
+		private String borrowerName;
 	    private String assetCategory;
 	    private String city;
 	    private String province;
 	    private String area;
 	    @DateTimeFormat(pattern = "HH:mm")
-	    private LocalTime auctionStartTime =null;
+	    private LocalTime auctionStartTime;
 	    private LocalDate auctionEndDate;
 	    private LocalDate applicationSubmissionDate;
-	    private String borrowerName;
-
+	    
 		private  byte[] imagefeild;
 
 	public PropertyDetails() {

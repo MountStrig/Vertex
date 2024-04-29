@@ -27,6 +27,13 @@ body{
 {
     color: white;
 }
+.card1:hover h3 {
+    font-size: 30px; /* Increase font size upon hover */
+}
+
+.card1:hover i {
+    font-size: 70px !important; /* Increase icon size upon hover */
+}
 .card1 {
 width: 310px; /* Set the desired width for each card */
   height: 250px; /* Set the desired height for each card */
@@ -184,11 +191,12 @@ position : relative;
 .btn-icon, .list-btn-bg, .liveproperty-btn-bg {
     background-color: #9afd6f;
 }
-a {
- color : #3f5833 !important;
-}
+
 .button {
 width : 55%;
+}
+.home-aution-list {
+	box-shadow: 0 3px 5px 0 rgba(31,38,135,.37);
 }
 .support-rounded-size {
     height: 50px;

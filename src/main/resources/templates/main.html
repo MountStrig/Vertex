@@ -171,15 +171,19 @@ width : 55%;
         <div class="col-md-6">
 			<a th:href="@{/Interestedetails}" class="button">Intrested Candidate List</a>
         </div>
-        <div class="col-md-6">
+       <!-- <div class="col-md-6">
         <button class="button" data-toggle="modal"  data-target="#viewDocumentListModal" style="border: none;">View Document List</button>
         </div>
         <div class="col-md-6">
             <button class="button" data-toggle="modal"  data-target="#uploadDocumentModal" style="border: none;" >Upload Document</button>
-        </div>
+        </div>-->
           <div class="col-md-6">
-            <a th:href="@{/AuctionForm}" class="button">Create Account</a>
+            <a th:href="@{/AuctionForm}" class="button">Create New Auction</a>
           </div>
+		           <div class="col-md-6">
+		             <a th:href="@{/callbackdeatils}" class="button">Request Call Back List</a>
+		           </div>
+
       </div>
     </div>
     <div class="modal fade" id="propertyModal" tabindex="-1" role="dialog" aria-labelledby="propertyModalLabel" aria-hidden="true">

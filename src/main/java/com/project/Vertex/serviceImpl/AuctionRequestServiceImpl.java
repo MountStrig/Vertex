@@ -4,10 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.Vertex.entity.AuctionRequest;
-import com.project.Vertex.repository.AuctionRepository;
 import com.project.Vertex.repository.AuctionRequestRepository;
-import com.project.Vertex.service.AuctionRequestService;
-import com.project.Vertex.service.AuctionService;
+import com.project.Vertex.service.AuctionRequestService;;
 
 @Service
 public class AuctionRequestServiceImpl implements AuctionRequestService{

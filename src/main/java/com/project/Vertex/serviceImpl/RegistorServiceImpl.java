@@ -58,4 +58,12 @@ public class RegistorServiceImpl implements RegisterService{
             return "Password updated successfully";
         }
     }
+
+
+
+
+    @Override
+    public Register findByEmail(String email) {
+        return registerRepository.findByEmail(email);
+    }
 }
