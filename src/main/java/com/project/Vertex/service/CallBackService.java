@@ -14,7 +14,8 @@ public interface CallBackService {
 
 	CallBack findById(Long callbackId);
 
-//	boolean existsByAuctionIdAndUserId(Long auctionId, Long id);
+	List<CallBack> findCallbacksByUser(Register user);
+
 
 	 
 }

@@ -2,6 +2,7 @@ package com.project.Vertex.entity;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Arrays;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -9,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 @Entity
 public class PropertyDetails {
@@ -24,25 +26,12 @@ public class PropertyDetails {
 	    private String area;
 	    @DateTimeFormat(pattern = "HH:mm")
 	    private LocalTime auctionStartTime;
-	    private LocalDate auctionEndDate;
+	    private LocalDate auctionStartDate;
 	    private LocalDate applicationSubmissionDate;
-	    
-		private  byte[] imagefeild;
+	    @Transient
+	    private String base64Image;
 
 	public PropertyDetails() {
-	}
-
-	public PropertyDetails(Long id, String assetCategory, String city, String province, String area, LocalTime auctionStartTime, LocalDate auctionEndDate, LocalDate applicationSubmissionDate, String borrowerName, byte[] imagefeild) {
-		this.id = id;
-		this.assetCategory = assetCategory;
-		this.city = city;
-		this.province = province;
-		this.area = area;
-		this.auctionStartTime = auctionStartTime;
-		this.auctionEndDate = auctionEndDate;
-		this.applicationSubmissionDate = applicationSubmissionDate;
-		this.borrowerName = borrowerName;
-		this.imagefeild = imagefeild;
 	}
 
 	public Long getId() {
@@ -51,6 +40,14 @@ public class PropertyDetails {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getBorrowerName() {
+		return borrowerName;
+	}
+
+	public void setBorrowerName(String borrowerName) {
+		this.borrowerName = borrowerName;
 	}
 
 	public String getAssetCategory() {
@@ -93,12 +90,12 @@ public class PropertyDetails {
 		this.auctionStartTime = auctionStartTime;
 	}
 
-	public LocalDate getAuctionEndDate() {
-		return auctionEndDate;
+	public LocalDate getAuctionStartDate() {
+		return auctionStartDate;
 	}
 
-	public void setAuctionEndDate(LocalDate auctionEndDate) {
-		this.auctionEndDate = auctionEndDate;
+	public void setAuctionStartDate(LocalDate auctionStartDate) {
+		this.auctionStartDate = auctionStartDate;
 	}
 
 	public LocalDate getApplicationSubmissionDate() {
@@ -109,19 +106,44 @@ public class PropertyDetails {
 		this.applicationSubmissionDate = applicationSubmissionDate;
 	}
 
-	public String getBorrowerName() {
-		return borrowerName;
+	
+	public String getBase64Image() {
+		return base64Image;
 	}
 
-	public void setBorrowerName(String borrowerName) {
+	public void setBase64Image(String base64Image) {
+		this.base64Image = base64Image;
+	}
+
+	public PropertyDetails(Long id, String borrowerName, String assetCategory, String city, String province,
+			String area, LocalTime auctionStartTime, LocalDate auctionStartDate, LocalDate applicationSubmissionDate,
+			String base64Image) {
+		super();
+		this.id = id;
 		this.borrowerName = borrowerName;
+		this.assetCategory = assetCategory;
+		this.city = city;
+		this.province = province;
+		this.area = area;
+		this.auctionStartTime = auctionStartTime;
+		this.auctionStartDate = auctionStartDate;
+		this.applicationSubmissionDate = applicationSubmissionDate;
+		this.base64Image = base64Image;
+	}
+
+	@Override
+	public String toString() {
+		return "PropertyDetails [id=" + id + ", borrowerName=" + borrowerName + ", assetCategory=" + assetCategory
+				+ ", city=" + city + ", province=" + province + ", area=" + area + ", auctionStartTime="
+				+ auctionStartTime + ", auctionStartDate=" + auctionStartDate + ", applicationSubmissionDate="
+				+ applicationSubmissionDate + ", base64Image=" + base64Image + "]";
 	}
 
 	public byte[] getImagefeild() {
-		return imagefeild;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public void setImagefeild(byte[] imagefeild) {
-		this.imagefeild = imagefeild;
-	}
+	
+	
 }

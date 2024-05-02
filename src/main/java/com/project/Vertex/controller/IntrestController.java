@@ -173,7 +173,6 @@ public class IntrestController {
 		                callback.setAuctionEntity(auctionEntity);
 		                callback.setRegister(user);
 		                	
-		                System.out.println(auctionEntity+""+user);
 		                // Save the callback using the service
 		                callBackRepository.save(callback);
 
@@ -230,16 +229,43 @@ public class IntrestController {
 		}
 		
 		
-		/*
-		 * @GetMapping("/callbackdetails") public String showAllCallbacks(Model model) {
-		 * // Retrieve all callbacks from the service List<CallBack> callbacks =
-		 * callBackService.getAllCallbacks(); // Assuming you have this method in
-		 * CallBackService
-		 * 
-		 * // Add callbacks to the model model.addAttribute("callbacks", callbacks);
-		 * 
-		 * // Return the view name (HTML template name) return "Callbacktable"; }
-		 */
+		@GetMapping("/callbackdeatilsbyuser")
+	    public String showCallbacksByLoginUser(Model model, Principal principal) {
+	        // Retrieve the email of the logged-in user
+	        String loggedInUsername = principal.getName();
+
+	        // Find the user (Register entity) based on the email
+	        Register user = registerService.findByEmail(loggedInUsername);
+
+	        if (user != null) {
+	            // Get all callbacks associated with the logged-in user
+	            List<CallBack> callbacks = callBackService.findCallbacksByUser(user);
+
+	            // Create a list to hold callback details DTOs
+	            List<CallbackDetailsDTO> callbackDetailsList = new ArrayList<>();
+
+	            // Populate callback details DTOs with associated entities
+	            for (CallBack callback : callbacks) {
+	                AuctionEntity auctionEntity = callback.getAuctionEntity();
+
+	                // Create CallbackDetailsDTO object
+	                CallbackDetailsDTO callbackDetailsDTO = new CallbackDetailsDTO(callback, auctionEntity, user);
+
+	                // Add CallbackDetailsDTO to the list
+	                callbackDetailsList.add(callbackDetailsDTO);
+	            }
+
+	            // Add callbackDetailsList to the model with a single attribute name
+	            model.addAttribute("callbacksData", callbackDetailsList);
+
+	            return "index1"; // HTML template name (Callbacktable.html)
+	        } else {
+	            // Handle case where user is not found
+	            model.addAttribute("error", "User not found!");
+	            return "error-page"; // Provide appropriate error handling page
+	        }
+	    }
+
 
 
 

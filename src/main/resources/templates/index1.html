@@ -41,53 +41,39 @@
 						        </div>
 						      </nav>
 
-						 
-						  
-		
-
-
-	<div>
-		<div>		
-			<div>
-				<table class="table table-striped ">
-				    <thead>
-				    <tr>
-				        <th scope="col">#</th>
-				        <th scope="col">auctionId</th>
-				        <th scope="col">propertyTitle</th>
-				        <th scope="col">Name</th>
-				        <th scope="col">Email</th>
-				        <th scope="col">Phone</th>
-				        <th scope="col">View details</th>
-				
-				    </tr>
-				    </thead>
-				    <tbody>
-				   
-					<!-- Iterate over each callback in the 'callbacks' list -->
-					<tr th:each="details, index : ${callbacksData}">
-					     <td th:text="${index.index + 1}"></td> <!-- Display row number -->
-					     <td th:text="${details.auctionEntity.auctionId}"></td> <!-- Display auction ID -->
-					     <td th:text="${details.auctionEntity.propertyTitle}"></td> <!-- Display property title -->
-					     <td th:text="${details.register.name}"></td> <!-- Display user's name -->
-					     <td th:text="${details.register.email}"></td> <!-- Display user's email -->
-					     <td th:text="${details.register.mobileNumber}"></td> <!-- Display user's phone number -->
-					     <td>
-					         <!-- Link to view details of the callback -->
-							 <a th:href="@{'/Auctiondetails/' + ${details.auctionEntity.id}}">
-							     <button class="btn btn-primary">Details</button>
-							 </a>
-				
-				
-					     </td>
-					 </tr>
-					
-					
-				    </tbody>
-				</table>
-			</div>			
-		</div>
-	</div>
+							  <!-- Main Content Section -->
+							  <div class="container mt-5">
+							         <h2>Callback Details</h2>
+							         <table class="table table-striped">
+							             <thead>
+							                 <tr>
+							                     <th>#</th>
+							                     <th>Auction ID</th>
+							                     <th>Property Title</th>
+							                     <th>Name</th>
+							                     <th>Email</th>
+							                     <th>Phone</th>
+							                     <th>View Details</th>
+							                 </tr>
+							             </thead>
+							             <tbody>
+							                 <!-- Iterate over callbackDetailsList -->
+							                 <tr th:each="callbackDetails, index : ${callbacksData}">
+							                     <td th:text="${index.index + 1}"></td>
+							                     <td th:text="${callbackDetails.callback.auctionEntity.id}"></td>
+							                     <td th:text="${callbackDetails.callback.auctionEntity.propertyTitle}"></td>
+							                     <td th:text="${callbackDetails.register.name}"></td>
+							                     <td th:text="${callbackDetails.register.email}"></td>
+							                     <td th:text="${callbackDetails.register.mobileNumber}"></td>
+							                     <td>
+							                         <!-- View Details button (link to a specific callback's details) -->
+							                         <a th:href="@{/Auctiondetails/{id}(id=${callbackDetails.auctionEntity.id})}"
+							                            class="btn btn-info btn-sm" role="button">View Details</a>
+							                     </td>
+							                 </tr>
+							             </tbody>
+							         </table>
+							     </div>
 
 
 

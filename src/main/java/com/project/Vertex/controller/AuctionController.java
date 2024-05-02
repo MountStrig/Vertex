@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.project.Vertex.entity.AuctionRequest;
 import com.project.Vertex.service.AuctionRequestService;
 
 @Controller

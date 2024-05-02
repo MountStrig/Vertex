@@ -44,6 +44,12 @@ public class CallBackServiceImpl implements CallBackService{
 		        return callBackRepository.findById(id).orElse(null);
 		    }
 
+		 @Override
+		    public List<CallBack> findCallbacksByUser(Register user) {
+		        // Retrieve callbacks associated with the given user
+		        return callBackRepository.findByRegister(user);
+		    }
+
 		 
 		
 		 

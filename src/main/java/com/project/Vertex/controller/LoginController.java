@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.project.Vertex.entity.AuctionRequest;
 import com.project.Vertex.entity.Intrest;
 import com.project.Vertex.entity.Register;
 import com.project.Vertex.service.AuctionRequestService;
@@ -78,19 +77,19 @@ public class LoginController {
 	model.addAttribute("register", new Register());
 	        
 	        // Add a new instance of AuctionRequest to the model for the form
-	        model.addAttribute("request", new AuctionRequest());
+	       // model.addAttribute("request", new AuctionRequest());
 	        
-	        return "index1";
+	        return "redirect:/callbackdeatilsbyuser";
 	}	
 	
 	@Autowired
 	AuctionRequestService auctionRequestService;
 	
 	@PostMapping("/saveAuctionRequest")
-	public String saveAuctionRequest(@ModelAttribute("request")AuctionRequest auctionRequest, Model model) {
+	public String saveAuctionRequest(@ModelAttribute("request")  Model model) {
 		   
-		   model.addAttribute("request", new AuctionRequest());
-		   auctionRequestService.saveAuctionRequest(auctionRequest);
+		//   model.addAttribute("request", new AuctionRequest());
+		 //  auctionRequestService.saveAuctionRequest(auctionRequest);
 		   
 		   return "redirect:/userSuccess";
 	   }
