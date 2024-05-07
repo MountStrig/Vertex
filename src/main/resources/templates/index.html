@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
+<html xmlns:th="http://www.thymeleaf.org">	
+	  xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
@@ -60,7 +61,7 @@
         </div>
       </nav>
 
-      <div class="container-fluid">
+      <div class="container-fluid" style="margin-top: 4%;">
         <div class="container mt-4">
             <marquee><h2 style="color: #133903;">Properties at lowest Prices than the market rates</h2></marquee>
         </div>
@@ -419,7 +420,7 @@
                             <div class="col-sm-12 col-lg-2"><button class="search-btn text-dark" type="submit" fdprocessedid="adimyk">Search</button></div>
                         </div>
                     </form>
-                    <div class="d-lg-flex d-md-flex justify-content-center text-center">
+                  <!--  <div class="d-lg-flex d-md-flex justify-content-center text-center">
                         <div class="p-2">
                             <a href="https://www.vertexproserv.com/category/vehicle-auctions/live" class="btn live-vehicle-btn btn-sm fw-bold">164 Live Vehicles</a>
                         </div>
@@ -432,9 +433,9 @@
                         <div class="p-2">
                             <p class="btn old-property-btn btn-sm fw-bold">140213 Registered Users</p>
                         </div>
-                        <!--<div class="p-2">-->
-                        <!--    <a href="/trending-properties" class="btn live-vehicle-btn btn-sm fw-bold">Trending Properties</a>-->
-                        <!--</div>-->                </div>
+                        <div class="p-2">
+                            <a href="/trending-properties" class="btn live-vehicle-btn btn-sm fw-bold">Trending Properties</a>
+                        </div>                </div>-->
                 </div>
             </div>
         </div>
@@ -636,19 +637,34 @@
 	    </div>
 	</section>-->
 
-	<section>
+<!--	<section>
 	    <div class="container-fluid home-aution-list" style="width: 98%;">
 	
-	        <!-- Iterate over auction details -->
+	         Iterate over auction details 
 	        <div th:each="auction : ${allDetails}" class="row mt-2">
 	            <div class="col-md-6" id="property-top" style="margin-bottom: 10px;">
 	                <div class="img-emd" th:text="${auction.bankDetails.emd}"></div>
 	                <div class="property-type-tag" th:text="${auction.propertyDetails.assetCategory}"></div>
 	                <img th:src="@{/images/8-removebg-preview.png}" class="img-fluid h-100 w-100" alt="Debts Recovery Tribunal Auctions for Commercial Office in Shaniwar Peth, Pune" title="Debts Recovery Tribunal Auctions for Commercial Office in Shaniwar Peth, Pune">
-	            </div>
+	          
+			  <div th:if="${not #lists.isEmpty(allDetails)}" class="slick-carousel">
+			                      <th:block th:each="auction : ${allDetails}">
+			                          <div>
+			                               Display auction image 
+										  <img th:if="${auction.propertyDetails.base64Images != null and not #lists.isEmpty(auction.propertyDetails.base64Images)}"
+										       th:src="@{'data:image/jpeg;base64,' + #strings.toHexString(auction.propertyDetails.base64Images[0])}"
+										       alt="Auction Image">
+
+			                          </div>
+			                      </th:block>
+			                  </div>
+
+			  
+		  
+		  </div>
 	
 	            <div class="col-md-6">
-	                <!-- Display auction details -->
+	                 Display auction details 
 	                <div class="bg-auctions1 p-4">
 	                    <div>
 	                        <i style="color: #9afd6f" class="fa fa-tags me-2" aria-hidden="true"></i>
@@ -666,7 +682,7 @@
 	                    <h3>Property Location: <span th:text="${auction.propertyDetails.province + ', ' + auction.propertyDetails.city}"></span></h3>
 						<h3>EMD: <span th:text="${auction.bankDetails.emd}"></span></h4>
 	
-	                    <!-- Conditionally display buttons based on authentication -->
+	                     Conditionally display buttons based on authentication 
 	                    <div th:if="${isAuthenticatedFromDb}">
 	                        <a th:href="@{/Auctiondetails/{id}(id=${auction.id})}" class="btn btn-bg" style="background-color: #9afd6f">Show More</a>
 	                    </div>
@@ -679,10 +695,53 @@
 	            </div>
 	        </div>
 	    </div>
-	</section>
+	</section>-->
 
+	<section>
+	    <div class="container-fluid home-aution-list" style="width: 98%;">
+	        <div th:each="auction : ${allDetails}" class="row mt-2">
+				<div class="col-md-6" id="property-top" style="margin-bottom: 10px;">
+				    <div class="img-emd" th:text="${auction.bankDetails.emd}"></div>
+				    <div class="property-type-tag" th:text="${auction.propertyDetails.assetCategory}"></div>
+				    <div class="slick-carousel">
+				        <th:block th:each="decodedImage : ${auction.propertyDetails.decodedImages}">
+				            <img th:src="@{'data:image/jpeg;base64,' + #strings.toString(decodedImage)}" alt="Auction Image">
+				        </th:block>
+				    </div>
+				</div>
+	            <div class="col-md-6">
+	                <!-- Display auction details -->
+	                <div class="bg-auctions1 p-4">
+	                    <div>
+	                        <i style="color: #9afd6f" class="fa fa-tags me-2" aria-hidden="true"></i>
+	                        <span th:text="${auction.propertyDetails.assetCategory}"></span>
+	                    </div>
+	                    <div class="d-flex align-items-center mt-2">
+	                        <h3 class="start-auction me-3">Auction Starts:</h3>
+	                        <i style="color: #9afd6f;" class="fa fa-calendar me-2" aria-hidden="true"></i>
+	                        <span th:text="${auction.propertyDetails.applicationSubmissionDate}"></span>
+	                    </div>
+	                    <h3>Property Title: <span th:text="${auction.propertyTitle}"></span></h3>
+	                    <h3>Auction ID: <span th:text="${auction.auctionId}"></span></h3>
+	                    <h3>Property Location: <span th:text="${auction.propertyDetails.province + ', ' + auction.propertyDetails.city}"></span></h3>
+	                    <h3>EMD: <span th:text="${auction.bankDetails.emd}"></span></h3>
+	                    <div th:if="${isAuthenticatedFromDb}">
+	                        <a th:href="@{/Auctiondetails/{id}(id=${auction.id})}" class="btn btn-bg" style="background-color: #9afd6f">Show More</a>
+	                    </div>
+	                    <div th:unless="${isAuthenticatedFromDb}">
+	                        <button class="btn btn-bg" style="background-color: #9afd6f" data-bs-toggle="modal" data-bs-target="#loginModal">View More</button>
+	                    </div>
+	                    <button class="btn mt-3" type="button" th:onclick="'setAuctionId(\'' + ${auction.id} + '\')'" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #9afd6f">I'm Interested</button>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	
 	
 			
+	<br>
+	
 			<!-- Modal -->
 			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog">
@@ -943,6 +1002,55 @@
          COPY RIGHT END 
     </footer>-->
 	
+	<script th:inline="javascript">
+	    // Wait for the document to fully load
+	    document.addEventListener('DOMContentLoaded', function() {
+	        // Select all <img> elements within the .slick-carousel container
+	        const images = document.querySelectorAll('.slick-carousel img');
+	
+	        // Loop through each image and attach a load event listener
+	        images.forEach(function(img) {
+	            img.addEventListener('load', function() {
+	                // Image loaded successfully
+	                console.log('Image loaded:', img.src);
+	                // Optionally, you can perform additional actions here
+	                // For example, you could show a success indicator or trigger other events
+	            });
+	
+	            img.addEventListener('error', function() {
+	                // Image failed to load
+	                console.error('Error loading image:', img.src);
+	                // Optionally, you can handle error cases here
+	                // For example, display a placeholder image or log the error
+	            });
+	        });
+	    });
+	</script>
+
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		    const carouselElement = document.querySelector('.carousel');
+		    if (carouselElement) {
+		        // Proceed with carousel initialization
+		    } else {
+		        console.error('Carousel element not found');
+		    }
+		});
+
+	</script>
+	<script th:inline="javascript">
+	        $(document).ready(function() {
+	            $('.slick-carousel').slick({
+	                slidesToShow: 1,
+	                slidesToScroll: 1,
+	                autoplay: true,
+	                autoplaySpeed: 2000,
+	                dots: true,
+	                arrows: false
+	            });
+	        });
+	    </script>
 	
 	<script>
 	    function setAuctionId(auctionId) {
@@ -964,6 +1072,7 @@
 		    modal.style.display = "block";
 		}
 	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
       <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 	  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

@@ -48,6 +48,7 @@ public class SecurityConfig implements WebMvcConfigurer {
 						.requestMatchers("/saveRegister").permitAll()
 						.requestMatchers("/emailLinks").permitAll()
 						.requestMatchers("/forgetPasswordSet").permitAll()
+						.requestMatchers("/auctionDetails").permitAll()
 						.requestMatchers("/intrest").permitAll()
 						.requestMatchers("/reset-password").permitAll().anyRequest()
 						.authenticated())

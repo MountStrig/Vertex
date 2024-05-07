@@ -1,5 +1,7 @@
 package com.project.Vertex.entity;
 
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -112,6 +114,12 @@ public class AuctionEntity {
 		}
 
 		public AuctionEntity() {
+			
+		}
+
+	
+		public void setBase64Image(String base64Image) {
+			// TODO Auto-generated method stub
 			
 		}
 	    

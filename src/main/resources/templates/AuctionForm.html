@@ -127,7 +127,7 @@ input[type="text"]:hover {
 </nav>
 <h1 class="mt-4">Add Auction Details</h1>
 
-<form th:action="@{/saveAuctionForm}" method="post" th:object="${entity}" class="mt-4">
+<form th:action="@{/saveAuctionForm}" method="post" th:object="${entity}" class="mt-4" enctype="multipart/form-data">
 	<!-- AuctionEntity Class -->
 	<div class="d-flex justify-content-center">
 		<div class="class-container">
@@ -245,10 +245,14 @@ input[type="text"]:hover {
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<div class="mb-3">
+					<!--<div class="mb-3">
 						<label for="imageUpload" class="form-label">Upload Images:</label>
 						<input type="file" class="form-control" id="imageUpload" name="imagefeild" accept="image/*" multiple max="5">
-					</div>
+					</div>-->
+					<div class="mb-3">
+					        <label for="imageUpload" class="form-label">Upload Images:</label>
+					        <input type="file" class="form-control" id="imageUpload" name="imageFiles" accept="image/*" multiple>
+					    </div>
 					<div id="fileNames"></div>
 				</div>
 			</div>

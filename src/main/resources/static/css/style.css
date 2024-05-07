@@ -6,6 +6,7 @@ body{
 }
 .navbar{
     background-color: #3f5833;
+    margin-bottom: 90%;
 }
 
 .serach-bar-btn{
@@ -225,6 +226,10 @@ width : 55%;
 .nav-search input {
     width : 45%;
 }
+.slick-slide img {
+            width: 100%;
+            height: auto;
+        }
 .nav-ul {
     display : flex;
     flex-direction : row;

@@ -17,6 +17,7 @@ import com.project.Vertex.service.AuctionServices;
 import jakarta.transaction.Transactional;
 
 @Service
+@Transactional
 public class AuctionServicesImpl implements AuctionServices{
 	
 	@Autowired
@@ -41,10 +42,10 @@ public class AuctionServicesImpl implements AuctionServices{
 
         // Save AuctionEntity (with associated PropertyDetails and BankDetails)
         auctionEntityRepository.save(auctionEntity);
+
     }
     
     @Override
-    @Transactional
     public List<AuctionEntity> getAllDetails() {
         return auctionEntityRepository.findAll();
     }
