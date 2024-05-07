@@ -6,22 +6,23 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 
 @Entity
-public class Intrest {
+public class Interest {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "auction_details_id")
 	private AuctionEntity auctionId;
 	private String name;
 	private String mobileNumber;
 	
-	public Intrest() {
+	public Interest() {
 		
 	}
 
@@ -57,7 +58,7 @@ public class Intrest {
 		this.mobileNumber = mobileNumber;
 	}
 
-	public Intrest(Long id, AuctionEntity auctionId, String name, String mobileNumber) {
+	public Interest(Long id, AuctionEntity auctionId, String name, String mobileNumber) {
 		super();
 		this.id = id;
 		this.auctionId = auctionId;

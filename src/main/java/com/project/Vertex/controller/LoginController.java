@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.project.Vertex.entity.Intrest;
+import com.project.Vertex.entity.Interest;
 import com.project.Vertex.entity.PropertyDetails;
 import com.project.Vertex.entity.Register;
 import com.project.Vertex.service.AuctionRequestService;
@@ -70,17 +70,21 @@ public class LoginController {
 	        if (propertyDetails != null && propertyDetails.getBase64Images() != null) {
 	            List<byte[]> decodedImages = decodeBase64Images(propertyDetails.getBase64Images());
 	            propertyDetails.setDecodedImages(decodedImages); // Set decoded images
-	            System.out.println("Auction ID: " + auction.getId());
-	            System.out.println("Base64 Images: " + propertyDetails.getBase64Images().size());
-	            System.out.println("First Base64 Image: " + propertyDetails.getBase64Images().get(0));
+				/*
+				 * System.out.println("Auction ID: " + auction.getId());
+				 * System.out.println("Base64 Images: " +
+				 * propertyDetails.getBase64Images().size());
+				 * System.out.println("First Base64 Image: " +
+				 * propertyDetails.getBase64Images().get(0));
+				 */
 	          
 	        }
 	    }
 
 	    // Add the retrieved list to the model to be accessed in the view
-	    model.addAttribute("imintrest", new Intrest());
+	    model.addAttribute("imintrest", new Interest());
 	    model.addAttribute("allDetails", allDetails);
-	    System.out.println(allDetails.toString());
+	  //  System.out.println(allDetails.toString());
 	    // Check authentication status
 	    boolean isAuthenticatedFromDb = false;
 	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

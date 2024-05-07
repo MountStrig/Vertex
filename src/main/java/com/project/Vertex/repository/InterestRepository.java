@@ -3,9 +3,9 @@ package com.project.Vertex.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.project.Vertex.entity.Intrest;
+import com.project.Vertex.entity.Interest;
 
 @Repository
-public interface IntrestRepository extends JpaRepository<Intrest, Long>{
+public interface InterestRepository extends JpaRepository<Interest, Long>{
 
 }

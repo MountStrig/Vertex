@@ -18,12 +18,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.project.Vertex.entity.AuctionEntity;
 import com.project.Vertex.entity.CallBack;
 import com.project.Vertex.entity.CallbackDetailsDTO;
-import com.project.Vertex.entity.Intrest;
+import com.project.Vertex.entity.Interest;
 import com.project.Vertex.entity.Register;
 import com.project.Vertex.repository.CallBackRepository;
 import com.project.Vertex.service.AuctionServices;
 import com.project.Vertex.service.CallBackService;
-import com.project.Vertex.service.IntrestService;
+import com.project.Vertex.service.InterestService;
 import com.project.Vertex.service.RegisterService;
 
 @Controller
@@ -32,7 +32,7 @@ public class IntrestController {
 	
 	
 	@Autowired
-	private IntrestService intrestService;
+	private InterestService interestService;
 	
 	
 	/*
@@ -48,17 +48,18 @@ public class IntrestController {
 	 */
 	
 	@PostMapping("/intrest")
-	public String saveIntrest(@ModelAttribute("imintrest") Intrest intrest, Model model) {
+	public String saveIntrest(@ModelAttribute("imintrest") Interest intrest, Model model) {
 		System.out.println("Hii ");
-		intrestService.saveIntrest(intrest);
+		interestService.saveInterest(intrest);
 		model.addAttribute("msg", "Intrest Saved....!");
+		System.out.println("Interested asaved");
 		return "redirect:/";
 	}
 	
 		@GetMapping("/Interestedetails")
 	    public String getAllIntrests(Model model) {
 	      
-	        List<Intrest> intrestList = intrestService.getAllIntrests();
+	        List<Interest> intrestList = interestService.getAllInterests();
 	        model.addAttribute("intrestList", intrestList);
 	       
 	        return "IamInterested"; 

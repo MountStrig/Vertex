@@ -5,27 +5,28 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.project.Vertex.entity.Intrest;
-import com.project.Vertex.repository.IntrestRepository;
-import com.project.Vertex.service.IntrestService;
+import com.project.Vertex.entity.Interest;
+import com.project.Vertex.repository.InterestRepository;
+import com.project.Vertex.service.InterestService;
 
 @Service
-public class IntrestServiceImpl implements IntrestService{
+public class IntrestServiceImpl implements InterestService{
 	
 	@Autowired
-	private IntrestRepository intrestRepository;
+	private InterestRepository intrestRepository;
 	
 	
 	@Override
-	public Intrest saveIntrest(Intrest intrest) {
+	public Interest saveInterest(Interest intrest) {
 		// TODO Auto-generated method stub
 		return intrestRepository.save(intrest);
 	}
 
 	@Override
-	public List<Intrest> getAllIntrests() {
+	public List<Interest> getAllInterests() {
 		// TODO Auto-generated method stub
 		return intrestRepository.findAll();
 	}
+
 	
 }

@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -27,12 +28,12 @@ public class AuctionEntity {
 	    private String contactDetails;
 
 	    // One-to-One relationship with PropertyDetails
-	    @OneToOne(cascade = CascadeType.ALL)
+	    @ManyToOne(cascade = CascadeType.ALL)
 	    @JoinColumn(name = "property_details_id")
 	    private PropertyDetails propertyDetails;
 
 	    // One-to-One relationship with BankDetails
-	    @OneToOne(cascade = CascadeType.ALL)
+	    @ManyToOne(cascade = CascadeType.ALL)
 	    @JoinColumn(name = "bank_details_id")
 	    private BankDetails bankDetails;
 
