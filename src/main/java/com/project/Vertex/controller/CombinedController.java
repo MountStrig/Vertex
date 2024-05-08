@@ -177,6 +177,17 @@ public class CombinedController {
 	 * // Return the view name return "PropertyAuctionDetail"; }
 	 */
 
+    @GetMapping("/search")
+    public List<AuctionEntity> searchAuctions(
+        @RequestParam long auctionId,
+        @RequestParam String category,
+        @RequestParam String state,
+        @RequestParam String city,
+        @RequestParam String bank) {
+
+        return auctionServices.searchProperties(auctionId, category, state, city, bank);
+    }
+
 }
     
     

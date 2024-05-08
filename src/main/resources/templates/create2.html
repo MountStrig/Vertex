@@ -6,67 +6,34 @@
     <style>
         /* Define CSS styles for the property images container */
         .property-images {
-            border: 10px solid #ccc; /* Add a 10px solid border with light gray color */
-            padding: 10px; /* Add padding around the images */
-            height: 250px;
-            width: 100%; /* Set width to 100% for responsiveness */
-            overflow: auto; /* Enable overflow scrolling if needed */
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow: auto;
         }
         .property-images img {
-            max-width: 100%; /* Ensure images resize responsively within the container */
-            display: block; /* Ensure images behave as block-level elements */
-            margin-bottom: 20px; /* Increase bottom margin between images to 20px */
+            display: block;
+            margin-bottom: 10px;
+            max-width: 100%;
         }
     </style>
 </head>
 <body>
     <h1>Property Details</h1>
     
+    <!-- Iterate over allDetails and display property details -->
     <div th:each="auction : ${allDetails}" class="row mt-4">
-       
-		<div class="col-md-6" id="property-top" style="margin-bottom: 10px;"
-		     th:each="auction : ${allDetails}">
-		    <div class="img-emd" th:text="${auction.bankDetails.emd}"></div>
-		    <div class="property-type-tag" th:text="${auction.propertyDetails.assetCategory}"></div>
-		    <div class="slick-carousel">
-		        <th:block th:each="imageData : ${auction.propertyDetails.decodedImages}">
-		            <img th:src="@{'data:image/jpeg;base64,' + #strings.toString(imageData)}"
-		                 alt="Auction Image">
-		        </th:block>
-		    </div>
-		</div>
-
-		
-		
         <div class="col-md-6">
-            <!-- Display other property details -->
-            <div class="property-details">
-                <h2 th:text="${auction.propertyTitle}"></h2>
-                <p th:text="${auction.propertyDescription}"></p>
-                <p><strong>Location:</strong> <span th:text="${auction.propertyDetails.province + ', ' + auction.propertyDetails.city}"></span></p>
-                <p><strong>Start Date:</strong> <span th:text="${auction.propertyDetails.auctionStartDate}"></span></p>
-                <p><strong>EMD:</strong> <span th:text="${auction.bankDetails.emd}"></span></p>
+            <h2 th:text="${auction.propertyTitle}"></h2>
+            <p th:text="${auction.propertyDescription}"></p>
+            <p><strong>Contact Details:</strong> <span th:text="${auction.contactDetails}"></span></p>
+            <!-- Display images -->
+            <div class="property-images">
+                <div th:each="base64Image : ${auction.propertyDetails.base64Images}">
+                    <img th:src="${'data:image/jpeg;base64,' + base64Images}" alt="Auction Image">
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- JavaScript to log image loading -->
-	<script th:inline="javascript">
-	    document.addEventListener('DOMContentLoaded', function() {
-	        console.log('Document ready!');
-	
-	        // Log a message for each image when it is successfully loaded or fails to load
-	        var images = document.querySelectorAll('.property-images img');
-	        images.forEach(function(image) {
-	            image.onload = function() {
-	                console.log('Image loaded successfully: ' + image.src);
-	            };
-	            image.onerror = function() {
-	                console.log('Error loading image: ' + image.src);
-	            };
-	        });
-	    });
-	</script>
 
 </body>
 </html>

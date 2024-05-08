@@ -61,4 +61,10 @@ public class AuctionServicesImpl implements AuctionServices{
             return null; // Return null if AuctionEntity with given ID is not found
         }
     }
+    
+    public List<AuctionEntity> searchProperties(long auctionId, String category, String state, String city, String bank) {
+        return auctionEntityRepository.findByAuctionIdAndPropertyDetailsAssetCategoryAndPropertyDetailsProvinceAndPropertyDetailsCityAndBankDetailsBankName(
+            auctionId, category, state, city, bank);
+    }
+
 }

@@ -70,21 +70,22 @@ public class LoginController {
 	        if (propertyDetails != null && propertyDetails.getBase64Images() != null) {
 	            List<byte[]> decodedImages = decodeBase64Images(propertyDetails.getBase64Images());
 	            propertyDetails.setDecodedImages(decodedImages); // Set decoded images
-				/*
-				 * System.out.println("Auction ID: " + auction.getId());
-				 * System.out.println("Base64 Images: " +
-				 * propertyDetails.getBase64Images().size());
-				 * System.out.println("First Base64 Image: " +
-				 * propertyDetails.getBase64Images().get(0));
-				 */
+				
+				  System.out.println("Auction ID: " + auction.getId());
+				 System.out.println("Base64 Images: " +propertyDetails.getBase64Images().size());
+				  System.out.println("First Base64 Image: " +propertyDetails.getBase64Images().get(0));
+				  System.out.println(allDetails.toString());
+				  System.out.println("_*_*_*_*_*_*_*_*_*_**_*_*_*_*_*_*_*");
 	          
 	        }
 	    }
+	    
+	    
 
 	    // Add the retrieved list to the model to be accessed in the view
 	    model.addAttribute("imintrest", new Interest());
 	    model.addAttribute("allDetails", allDetails);
-	  //  System.out.println(allDetails.toString());
+	   
 	    // Check authentication status
 	    boolean isAuthenticatedFromDb = false;
 	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

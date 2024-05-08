@@ -13,4 +13,7 @@ public interface AuctionServices {
 	List<AuctionEntity> getAllDetails();
 
 	AuctionEntity findById(Long auctionId);
+
+	List<AuctionEntity> searchProperties(long auctionId, String category, String state, String city, String bank);
+	
 }
