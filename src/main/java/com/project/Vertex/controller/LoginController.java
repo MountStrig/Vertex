@@ -26,11 +26,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 @Controller
 public class LoginController {
-	
-	
+
 	@Autowired
 	AuctionServices auctionServices;
-	
+
 	/*
 	 * @GetMapping("/") public String getIndexPage(Model model) {
 	 * model.addAttribute("register", new Register()); List<AuctionEntity>
@@ -57,6 +56,93 @@ public class LoginController {
 	 * model.addAttribute("isAuthenticatedFromDb", isAuthenticatedFromDb); return
 	 * "index"; }
 	 */
+
+	/*
+	 * @GetMapping("/") public String getIndexPage(Model model) {
+	 * model.addAttribute("register", new Register()); List<AuctionEntity>
+	 * allDetails = auctionServices.getAllDetails();
+	 * 
+	 * // Decode Base64 images for each AuctionEntity for (AuctionEntity auction :
+	 * allDetails) { PropertyDetails propertyDetails = auction.getPropertyDetails();
+	 * if (propertyDetails != null && propertyDetails.getImages() != null) {
+	 * List<byte[]> decodedImages = decodeBase64Images(propertyDetails.getImages());
+	 * propertyDetails.setDecodedImages(decodedImages); // Set decoded images } }
+	 * 
+	 * // Add the retrieved list to the model to be accessed in the view
+	 * model.addAttribute("imintrest", new Interest());
+	 * model.addAttribute("allDetails", allDetails);
+	 * 
+	 * // Check authentication status boolean isAuthenticatedFromDb = false;
+	 * Authentication authentication =
+	 * SecurityContextHolder.getContext().getAuthentication(); if (authentication !=
+	 * null && authentication.isAuthenticated()) { Object principal =
+	 * authentication.getPrincipal(); if (principal instanceof UserDetails) {
+	 * UserDetails userDetails = (UserDetails) principal; if
+	 * (userDetails.getUsername() != null) { isAuthenticatedFromDb = true; } } }
+	 * model.addAttribute("isAuthenticatedFromDb", isAuthenticatedFromDb);
+	 * 
+	 * return "index"; }
+	 * 
+	 * 
+	 * private List<byte[]> decodeBase64Images(List<byte[]> list) { List<byte[]>
+	 * decodedImages = new ArrayList<>(); Base64.Decoder decoder =
+	 * Base64.getDecoder(); for (byte[] base64Image : list) { try { byte[]
+	 * decodedImage = decoder.decode(base64Image); decodedImages.add(decodedImage);
+	 * } catch (IllegalArgumentException e) {
+	 * System.err.println("Failed to decode Base64 image: " + e.getMessage()); } }
+	 * return decodedImages; }
+	 * 
+	 * 
+	 * private List<byte[]> decodeBase64Images(List<byte[]> list) { List<byte[]>
+	 * decodedImages = new ArrayList<>(); Base64.Decoder decoder =
+	 * Base64.getDecoder(); for (byte[] base64Image : list) { try { byte[]
+	 * decodedImage = decoder.decode(base64Image); decodedImages.add(decodedImage);
+	 * } catch (IllegalArgumentException e) {
+	 * System.err.println("Failed to decode Base64 image: " + e.getMessage()); //
+	 * Handle the exception gracefully, e.g., skip the problematic image // You can
+	 * also log the problematic image for further investigation } } return
+	 * decodedImages; }
+	 */
+	
+	
+	/*
+	 * @GetMapping("/") public String getIndexPage(Model model) {
+	 * model.addAttribute("register", new Register()); List<AuctionEntity>
+	 * allDetails = auctionServices.getAllDetails();
+	 * 
+	 * // Decode Base64 images for each AuctionEntity for (AuctionEntity auction :
+	 * allDetails) { PropertyDetails propertyDetails = auction.getPropertyDetails();
+	 * if (propertyDetails != null && propertyDetails.getImages() != null) {
+	 * List<byte[]> decodedImages = decodeBase64Images(propertyDetails.getImages());
+	 * propertyDetails.setImages(decodedImages); // Set decoded images to be
+	 * displayed } }
+	 * 
+	 * // Add the retrieved list to the model to be accessed in the view
+	 * model.addAttribute("imintrest", new Interest());
+	 * model.addAttribute("allDetails", allDetails);
+	 * 
+	 * // Check authentication status boolean isAuthenticatedFromDb = false;
+	 * Authentication authentication =
+	 * SecurityContextHolder.getContext().getAuthentication(); if (authentication !=
+	 * null && authentication.isAuthenticated()) { Object principal =
+	 * authentication.getPrincipal(); if (principal instanceof UserDetails) {
+	 * UserDetails userDetails = (UserDetails) principal; if
+	 * (userDetails.getUsername() != null) { isAuthenticatedFromDb = true; } } }
+	 * model.addAttribute("isAuthenticatedFromDb", isAuthenticatedFromDb);
+	 * 
+	 * return "index"; }
+	 * 
+	 * private List<byte[]> decodeBase64Images(List<byte[]> list) { List<byte[]>
+	 * decodedImages = new ArrayList<>(); Base64.Decoder decoder =
+	 * Base64.getDecoder(); for (int i = 0; i < list.size(); i++) { byte[]
+	 * base64Image = list.get(i); try { byte[] decodedImage =
+	 * decoder.decode(base64Image); decodedImages.add(decodedImage); } catch
+	 * (IllegalArgumentException e) { // Log the error and provide information about
+	 * the problematic image
+	 * System.err.println("Failed to decode Base64 image at index " + i + ": " +
+	 * e.getMessage()); } } return decodedImages; }
+	 * 
+	 */
 	
 	
 	@GetMapping("/")
@@ -64,28 +150,20 @@ public class LoginController {
 	    model.addAttribute("register", new Register());
 	    List<AuctionEntity> allDetails = auctionServices.getAllDetails();
 
-	    // Decode Base64 images for each AuctionEntity
+	    System.out.println(allDetails);
+	    // Encode Base64 images for each AuctionEntity
 	    for (AuctionEntity auction : allDetails) {
 	        PropertyDetails propertyDetails = auction.getPropertyDetails();
-	        if (propertyDetails != null && propertyDetails.getBase64Images() != null) {
-	            List<byte[]> decodedImages = decodeBase64Images(propertyDetails.getBase64Images());
-	            propertyDetails.setDecodedImages(decodedImages); // Set decoded images
-				
-				  System.out.println("Auction ID: " + auction.getId());
-				 System.out.println("Base64 Images: " +propertyDetails.getBase64Images().size());
-				  System.out.println("First Base64 Image: " +propertyDetails.getBase64Images().get(0));
-				  System.out.println(allDetails.toString());
-				  System.out.println("_*_*_*_*_*_*_*_*_*_**_*_*_*_*_*_*_*");
-	          
+	        if (propertyDetails != null && propertyDetails.getImages() != null) {
+	            List<String> encodedImages = encodeBase64Images(propertyDetails.getImages());
+	            propertyDetails.setEncodedImages(encodedImages); // Set encoded images to be displayed
 	        }
 	    }
-	    
-	    
 
 	    // Add the retrieved list to the model to be accessed in the view
 	    model.addAttribute("imintrest", new Interest());
 	    model.addAttribute("allDetails", allDetails);
-	   
+
 	    // Check authentication status
 	    boolean isAuthenticatedFromDb = false;
 	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -103,51 +181,51 @@ public class LoginController {
 	    return "index";
 	}
 
-	private List<byte[]> decodeBase64Images(List<byte[]> list) {
-	    List<byte[]> decodedImages = new ArrayList<>();
-	    for (byte[] base64Image : list) {
-	        byte[] decodedImage = Base64.getDecoder().decode(base64Image);
-	        decodedImages.add(decodedImage);
+	private List<String> encodeBase64Images(List<byte[]> list) {
+	    List<String> encodedImages = new ArrayList<>();
+	    Base64.Encoder encoder = Base64.getEncoder();
+	    for (int i = 0; i < list.size(); i++) {
+	        byte[] base64Image = list.get(i);
+	        try {
+	            String encodedImage = encoder.encodeToString(base64Image);
+	            encodedImages.add(encodedImage);
+	            System.out.println("Image Encoded " + i + " Success");
+	        } catch (IllegalArgumentException e) {
+	            // Log the error and provide information about the problematic image
+	            System.err.println("Failed to encode Base64 image at index " + i + ": " + e.getMessage());
+	        }
 	    }
-	    return decodedImages;
+	    return encodedImages;
 	}
 
+    
+    
+	@GetMapping("/adminSuccess")
+	public String showAdminPage(Model model) {
 
-	
-		/*
-		 * @GetMapping("/login") public String getLoginPage(Model model) {
-		 * 
-		 * return "login"; }
-		 */
-	 
-	 
-	 @GetMapping("/adminSuccess")
-		public String showAdminPage(Model model) {
-			
-			return "main";
-		}
-	
+		return "main";
+	}
+
 	@GetMapping("/userSuccess")
 	public String getIndexPage1(Model model) {
-	model.addAttribute("register", new Register());
-	        
-	        // Add a new instance of AuctionRequest to the model for the form
-	       // model.addAttribute("request", new AuctionRequest());
-	        
-	        return "redirect:/callbackdeatilsbyuser";
-	}	
-	
+		model.addAttribute("register", new Register());
+
+		// Add a new instance of AuctionRequest to the model for the form
+		// model.addAttribute("request", new AuctionRequest());
+
+		return "redirect:/callbackdeatilsbyuser";
+	}
+
 	@Autowired
 	AuctionRequestService auctionRequestService;
-	
+
 	@PostMapping("/saveAuctionRequest")
-	public String saveAuctionRequest(@ModelAttribute("request")  Model model) {
-		   
-		//   model.addAttribute("request", new AuctionRequest());
-		 //  auctionRequestService.saveAuctionRequest(auctionRequest);
-		   
-		   return "redirect:/userSuccess";
-	   }
-	
-	
+	public String saveAuctionRequest(@ModelAttribute("request") Model model) {
+
+		// model.addAttribute("request", new AuctionRequest());
+		// auctionRequestService.saveAuctionRequest(auctionRequest);
+
+		return "redirect:/userSuccess";
+	}
+
 }

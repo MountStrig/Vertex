@@ -727,17 +727,17 @@
 	    </div>
 	</section>-->
 
-	<section>
+	<!--<section>
 	    <div class="container-fluid home-aution-list" style="width: 98%;">
 	        <div th:each="auction : ${allDetails}" class="row mt-2">
 				<div class="col-md-6" id="property-top" style="margin-bottom: 10px;">
 				    <div class="img-emd" th:text="${auction.bankDetails.emd}"></div>
 				    <div class="property-type-tag" th:text="${auction.propertyDetails.assetCategory}"></div>
-				   <!-- <div class="slick-carousel">
+				    <div class="slick-carousel">
 				        <th:block th:each="decodedImage : ${auction.propertyDetails.decodedImages}">
 				            <img th:src="@{'data:image/jpeg;base64,' + #strings.toString(decodedImage)}" alt="Auction Image">
 				        </th:block>
-				    </div>-->
+				    </div>
 					<div class="property-images">
 					                <div th:each="base64Image : ${auction.propertyDetails.base64Images}">
 					                    <img th:src="${'data:image/jpeg;base64,' + base64Images}" alt="Auction Image">
@@ -746,7 +746,7 @@
 					            </div>
 				</div>
 	            <div class="col-md-6">
-	                <!-- Display auction details -->
+	                 Display auction details 
 	                <div class="bg-auctions1 p-4">
 	                    <div>
 	                        <i style="color: #9afd6f" class="fa fa-tags me-2" aria-hidden="true"></i>
@@ -772,8 +772,57 @@
 	            </div>
 	        </div>
 	    </div>
-	</section>
+	</section>-->
 	
+	
+	<section>
+	    <div class="container-fluid home-aution-list" style="width: 98%;">
+	        <div th:each="auction : ${allDetails}" class="row mt-2">
+	            <div class="col-md-6" id="property-top" style="margin-bottom: 10px;">
+	                <div class="img-emd" th:text="${auction.bankDetails.emd}"></div>
+	                <div class="property-type-tag" th:text="${auction.propertyDetails.assetCategory}"></div>
+	                <div class="property-images">
+	                    <!-- Loop through base64 images -->
+	                   <!-- <div th:each="base64Image : ${auction.propertyDetails.images}">
+	                        <img th:src="@{'data:image/jpeg;base64,' + base64Image}" alt="Auction Image">
+	                    </div>-->
+						
+						
+											    <div th:each="image : ${auction.propertyDetails.encodedImages}">
+											        <img th:src="@{'data:image/jpeg;base64,' + ${image}}" alt="Property Image"/>
+											    </div>
+											
+	                </div>
+	            </div>
+	            <div class="col-md-6">
+	                <!-- Display auction details -->
+	                <div class="bg-auctions1 p-4">
+	                    <div>
+	                        <i style="color: #9afd6f" class="fa fa-tags me-2" aria-hidden="true"></i>
+	                        <span th:text="${auction.propertyDetails.assetCategory}"></span>
+	                    </div>
+	                    <div class="d-flex align-items-center mt-2">
+	                        <h3 class="start-auction me-3">Auction Starts:</h3>
+	                        <i style="color: #9afd6f;" class="fa fa-calendar me-2" aria-hidden="true"></i>
+	                        <span th:text="${auction.propertyDetails.auctionStartDate}"></span>
+	                    </div>
+	                    <h3>Property Title: <span th:text="${auction.propertyTitle}"></span></h3>
+	                    <h3>Auction ID: <span th:text="${auction.auctionId}"></span></h3>
+	                    <h3>Property Location: <span th:text="${auction.propertyDetails.province + ', ' + auction.propertyDetails.city}"></span></h3>
+	                    <h3>EMD: <span th:text="${auction.bankDetails.emd}"></span></h3>
+	                    <div th:if="${isAuthenticatedFromDb}">
+	                        <a th:href="@{/Auctiondetails/{id}(id=${auction.id})}" class="btn btn-bg" style="background-color: #9afd6f">Show More</a>
+	                    </div>
+	                    <div th:unless="${isAuthenticatedFromDb}">
+	                        <button class="btn btn-bg" style="background-color: #9afd6f" data-bs-toggle="modal" data-bs-target="#loginModal">View More</button>
+	                    </div>
+	                    <button class="btn mt-3" type="button" th:onclick="'setAuctionId(\'' + ${auction.id} + '\')'" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #9afd6f">I'm Interested</button>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+
 	
 			
 	<br>

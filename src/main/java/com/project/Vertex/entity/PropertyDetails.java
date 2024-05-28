@@ -32,12 +32,21 @@ public class PropertyDetails {
 	    private LocalTime auctionStartTime;
 	    private LocalDate auctionStartDate;
 	    private LocalDate applicationSubmissionDate;
-		
-	 	@Lob
-	    @Column(length = Integer.MAX_VALUE)
-//	 	@Column(length = 100000)
-	 	@ElementCollection
-	    private List<byte[]> base64Images;
+	    
+	  
+	    @Lob
+		@Column(length = Integer.MAX_VALUE)
+		@ElementCollection
+		private List<byte[]> images;
+		private List<String> encodedImages;
+		 
+		 public List<String> getEncodedImages() {
+		        return encodedImages;
+		    }
+
+		    public void setEncodedImages(List<String> encodedImages) {
+		        this.encodedImages = encodedImages;
+		    }
 
 		public Long getId() {
 			return id;
@@ -111,27 +120,20 @@ public class PropertyDetails {
 			this.applicationSubmissionDate = applicationSubmissionDate;
 		}
 
-
-		public List<byte[]> getBase64Images() {
-		    return base64Images;
+		public List<byte[]> getImages() {
+			return images;
 		}
 
-		public void setBase64Images(List<byte[]> base64Images) {
-		    this.base64Images = base64Images;
+		public void setImages(List<byte[]> images) {
+			this.images = images;
 		}
 
-		@Override
-		public String toString() {
-			return "PropertyDetails [id=" + id + ", borrowerName=" + borrowerName + ", assetCategory=" + assetCategory
-					+ ", city=" + city + ", province=" + province + ", area=" + area + ", auctionStartTime="
-					+ auctionStartTime + ", auctionStartDate=" + auctionStartDate + ", applicationSubmissionDate="
-					+ applicationSubmissionDate + ", data=" + base64Images + "]";
+		public PropertyDetails() {
 		}
 
-		public PropertyDetails(Long id, String borrowerName, String assetCategory, String city, String province,
-				String area, LocalTime auctionStartTime, LocalDate auctionStartDate,
-				LocalDate applicationSubmissionDate, List<byte[]> data) {
-			super();
+		public PropertyDetails(Long id, String borrowerName, String assetCategory, String city, String province, String area,
+				LocalTime auctionStartTime, LocalDate auctionStartDate, LocalDate applicationSubmissionDate,
+				List<byte[]> images) {
 			this.id = id;
 			this.borrowerName = borrowerName;
 			this.assetCategory = assetCategory;
@@ -141,24 +143,27 @@ public class PropertyDetails {
 			this.auctionStartTime = auctionStartTime;
 			this.auctionStartDate = auctionStartDate;
 			this.applicationSubmissionDate = applicationSubmissionDate;
-			this.base64Images = data;
+			this.images = images;
 		}
 
-		public PropertyDetails() {
-			
+		@Override
+		public String toString() {
+			return "PropertyDetails [id=" + id + ", borrowerName=" + borrowerName + ", assetCategory=" + assetCategory
+					+ ", city=" + city + ", province=" + province + ", area=" + area + ", auctionStartTime=" + auctionStartTime
+					+ ", auctionStartDate=" + auctionStartDate + ", applicationSubmissionDate=" + applicationSubmissionDate
+					+ ", images=" + images + "]";
 		}
+	
 
 		
+		
 		public void setDecodedImages(List<byte[]> decodedImages) {
-			// TODO Auto-generated method stub
+		    this.images = decodedImages;
 		}
 
-		public List<AuctionEntity> getDecodedImages() {
-			// TODO Auto-generated method stub
-			return null;
+		public List<byte[]> getDecodedImages() {
+		    return images;
 		}
 
-
-	
 	
 }

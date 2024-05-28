@@ -88,6 +88,114 @@ public class CombinedController {
 	 * display error message) return "errorPage"; // Redirect to error page } }
 	 */
     
+	/*
+	 * @PostMapping("/saveAuctionForm") public String
+	 * saveAuctionForm(@ModelAttribute("entity") AuctionEntity auctionEntity,
+	 * 
+	 * @ModelAttribute("propertyDetails") PropertyDetails propertyDetails,
+	 * 
+	 * @ModelAttribute("bankDetails") BankDetails bankDetails,
+	 * 
+	 * @RequestParam("imageFiles") MultipartFile[] imageFiles) {
+	 * 
+	 * try { // Convert each uploaded image to base64-encoded byte array
+	 * List<byte[]> imageBytesList = Arrays.stream(imageFiles) .map(file -> { try {
+	 * try { return Base64.getEncoder().encode(file.getBytes()); } catch
+	 * (java.io.IOException e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } } catch (IOException e) { throw new
+	 * RuntimeException("Failed to read image file", e); } return null; })
+	 * .collect(Collectors.toList());
+	 * 
+	 * // Set the list of base64-encoded image byte arrays to PropertyDetails
+	 * propertyDetails.setBase64Images(imageBytesList);
+	 * 
+	 * // Associate PropertyDetails and BankDetails with AuctionEntity
+	 * auctionEntity.setPropertyDetails(propertyDetails);
+	 * auctionEntity.setBankDetails(bankDetails);
+	 * 
+	 * // Call service method to save AuctionEntity along with related details
+	 * auctionServices.saveAuctionDetails(auctionEntity, propertyDetails,
+	 * bankDetails);
+	 * 
+	 * return "redirect:/AuctionForm"; // Redirect to form page after successful
+	 * submission } catch (Exception e) { // Handle exception appropriately (e.g.,
+	 * display error message) return "errorPage"; // Redirect to error page } }
+	 */
+    
+	/*
+	 * @PostMapping("/saveAuctionForm") public String
+	 * saveAuctionForm(@ModelAttribute("entity") AuctionEntity auctionEntity,
+	 * 
+	 * @ModelAttribute("propertyDetails") PropertyDetails propertyDetails,
+	 * 
+	 * @ModelAttribute("bankDetails") BankDetails bankDetails,
+	 * 
+	 * @RequestParam("imageFiles") MultipartFile[] imageFiles) {
+	 * 
+	 * try { // Convert each uploaded image to byte array List<byte[]>
+	 * imageByteArrayList = Arrays.stream(imageFiles) .map(file -> { try { return
+	 * file.getBytes(); } catch (IOException e) { throw new
+	 * RuntimeException("Failed to read image file", e); } catch
+	 * (java.io.IOException e) { // TODO Auto-generated catch block
+	 * e.printStackTrace(); } return null; }) .collect(Collectors.toList());
+	 * 
+	 * // Set the list of byte array image data to PropertyDetails
+	 * propertyDetails.setImages(imageByteArrayList);
+	 * 
+	 * // Associate PropertyDetails and BankDetails with AuctionEntity
+	 * auctionEntity.setPropertyDetails(propertyDetails);
+	 * auctionEntity.setBankDetails(bankDetails);
+	 * 
+	 * // Call service method to save AuctionEntity along with related details
+	 * auctionServices.saveAuctionDetails(auctionEntity, propertyDetails,
+	 * bankDetails);
+	 * 
+	 * return "redirect:/AuctionForm"; // Redirect to form page after successful
+	 * submission } catch (Exception e) { // Handle exception appropriately (e.g.,
+	 * display error message) return "errorPage"; // Redirect to error page } }
+	 */
+    
+    //HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+//    @PostMapping("/saveAuctionForm")
+//    public String saveAuctionForm(@ModelAttribute("entity") AuctionEntity auctionEntity,
+//                                  @ModelAttribute("propertyDetails") PropertyDetails propertyDetails,
+//                                  @ModelAttribute("bankDetails") BankDetails bankDetails,
+//                                  @RequestParam("imageFiles") MultipartFile[] imageFiles) {
+//
+//        try {
+//            // Convert each uploaded image to byte array and encode to Base64
+//            List<byte[]> imageByteArrayList = Arrays.stream(imageFiles)
+//                    .map(file -> {
+//                        try {
+//                            return Base64.getEncoder().encode(file.getBytes());
+//                        } catch (IOException e) {
+//                            throw new RuntimeException("Failed to read image file", e);
+//                        } catch (java.io.IOException e) {
+//							// TODO Auto-generated catch block
+//							e.printStackTrace();
+//						}
+//						return null;
+//                    })
+//                    .collect(Collectors.toList());
+//
+//            // Set the list of byte array image data to PropertyDetails
+//            propertyDetails.setImages(imageByteArrayList);
+//
+//            // Associate PropertyDetails and BankDetails with AuctionEntity
+//            auctionEntity.setPropertyDetails(propertyDetails);
+//            auctionEntity.setBankDetails(bankDetails);
+//
+//            // Call service method to save AuctionEntity along with related details
+//            auctionServices.saveAuctionDetails(auctionEntity, propertyDetails, bankDetails);
+//
+//            return "redirect:/AuctionForm"; // Redirect to form page after successful submission
+//        } catch (Exception e) {
+//            // Handle exception appropriately (e.g., display error message)
+//            return "errorPage"; // Redirect to error page
+//        }
+//    }
+
     @PostMapping("/saveAuctionForm")
     public String saveAuctionForm(@ModelAttribute("entity") AuctionEntity auctionEntity,
                                   @ModelAttribute("propertyDetails") PropertyDetails propertyDetails,
@@ -95,25 +203,23 @@ public class CombinedController {
                                   @RequestParam("imageFiles") MultipartFile[] imageFiles) {
 
         try {
-            // Convert each uploaded image to base64-encoded byte array
-            List<byte[]> imageBytesList = Arrays.stream(imageFiles)
+            // Convert each uploaded image to byte array
+            List<byte[]> imageByteArrayList = Arrays.stream(imageFiles)
                     .map(file -> {
                         try {
-                            try {
-								return Base64.getEncoder().encode(file.getBytes());
-							} catch (java.io.IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
+                            return file.getBytes();
                         } catch (IOException e) {
                             throw new RuntimeException("Failed to read image file", e);
-                        }
+                        } catch (java.io.IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
 						return null;
                     })
                     .collect(Collectors.toList());
 
-            // Set the list of base64-encoded image byte arrays to PropertyDetails
-            propertyDetails.setBase64Images(imageBytesList);
+            // Set the list of byte array image data to PropertyDetails
+            propertyDetails.setImages(imageByteArrayList);
 
             // Associate PropertyDetails and BankDetails with AuctionEntity
             auctionEntity.setPropertyDetails(propertyDetails);
@@ -129,7 +235,26 @@ public class CombinedController {
         }
     }
 
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 	/*
 	 * @GetMapping("/allAuctionDetails") public String showAllAuctionDetails(Model
@@ -142,7 +267,7 @@ public class CombinedController {
 	 * return "PropertyAuctionDetail"; }
 	 */
 
-  
+    	
    
 	/*
 	 * @PutMapping("/auctionDetails") public String getAllAuctionDetails(Model

@@ -1,39 +1,75 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Property Details</title>
+    <title>Auction Details</title>
     <style>
-        /* Define CSS styles for the property images container */
-        .property-images {
+        /* Add your styles here */
+        .auction-card {
             border: 1px solid #ccc;
-            padding: 10px;
-            overflow: auto;
+            padding: 16px;
+            margin: 16px;
         }
-        .property-images img {
-            display: block;
-            margin-bottom: 10px;
+        .auction-card img {
             max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <h1>Property Details</h1>
-    
-    <!-- Iterate over allDetails and display property details -->
-    <div th:each="auction : ${allDetails}" class="row mt-4">
-        <div class="col-md-6">
-            <h2 th:text="${auction.propertyTitle}"></h2>
-            <p th:text="${auction.propertyDescription}"></p>
-            <p><strong>Contact Details:</strong> <span th:text="${auction.contactDetails}"></span></p>
-            <!-- Display images -->
-            <div class="property-images">
-                <div th:each="base64Image : ${auction.propertyDetails.base64Images}">
-                    <img th:src="${'data:image/jpeg;base64,' + base64Images}" alt="Auction Image">
+    <h1>Auction Details</h1>
+
+    <!-- Check authentication status -->
+    <div th:if="${isAuthenticatedFromDb}">
+        <p>Welcome, authenticated user!</p>
+    </div>
+    <div th:if="${!isAuthenticatedFromDb}">
+        <p>Please log in to see auction details.</p>
+    </div>
+
+    <!-- Iterate over all auction details -->
+    <div th:each="auction : ${allDetails}">
+        <div class="auction-card">
+            <h2 th:text="${auction.propertyTitle}">Property Title</h2>
+            <p th:text="${auction.propertyDescription}">Property Description</p>
+            <p>Contact: <span th:text="${auction.contactDetails}">Contact Details</span></p>
+            
+            <div th:if="${auction.propertyDetails != null}">
+                <h3>Property Details</h3>
+                <p>Borrower Name: <span th:text="${auction.propertyDetails.borrowerName}">Borrower Name</span></p>
+                <p>Asset Category: <span th:text="${auction.propertyDetails.assetCategory}">Asset Category</span></p>
+                <p>City: <span th:text="${auction.propertyDetails.city}">City</span></p>
+                <p>Province: <span th:text="${auction.propertyDetails.province}">Province</span></p>
+                <p>Area: <span th:text="${auction.propertyDetails.area}">Area</span></p>
+                <p>Auction Start Time: <span th:text="${auction.propertyDetails.auctionStartTime}">Auction Start Time</span></p>
+                <p>Auction Start Date: <span th:text="${auction.propertyDetails.auctionStartDate}">Auction Start Date</span></p>
+                <p>Application Submission Date: <span th:text="${auction.propertyDetails.applicationSubmissionDate}">Application Submission Date</span></p>
+                
+                <div th:if="${auction.propertyDetails.decodedImages != null}">
+                    <h4>Images</h4>
+                  <!--  <div th:each="image : ${auction.propertyDetails.decodedImages}">
+                        <img th:src="@{'data:image/jpeg;base64,' + ${T(org.thymeleaf.util.Base64Utils).encodeToString(image)}}" alt="Property Image"/>
+                    </div>-->
+					
+					<div th:each="auction : ${allDetails}">
+					    <div th:each="image : ${auction.propertyDetails.encodedImages}">
+					        <img th:src="@{'data:image/jpeg;base64,' + ${image}}" alt="Property Image"/>
+					    </div>
+					</div>
+
+					
+
                 </div>
+            </div>
+            
+            <div th:if="${auction.bankDetails != null}">
+                <h3>Bank Details HIIIII</h3>
+                <p>Bank Name: <span th:text="${auction.bankDetails.bankName}">Bank Name</span></p>
+                <p>EMD: <span th:text="${auction.bankDetails.emd}">EMD</span></p>
+                <p>Branch Name: <span th:text="${auction.bankDetails.branchName}">Branch Name</span></p>
+                <p>Service Provider: <span th:text="${auction.bankDetails.serviceProvider}">Service Provider</span></p>
+                <p>Reserve Price: <span th:text="${auction.bankDetails.reservePrice}">Reserve Price</span></p>
             </div>
         </div>
     </div>
-
 </body>
 </html>
